@@ -1,0 +1,16 @@
+.openapi-generator-ignore
+README.md
+pom.xml
+src/main/java/_generated_sources_swagger/ApiUtil.java
+src/main/java/_generated_sources_swagger/NeighborfoodApi.java
+src/main/java/br/com/techchallenge/fiap/neighborfood/domain/dto/AcompanhamentoResponseDTO.java
+src/main/java/br/com/techchallenge/fiap/neighborfood/domain/dto/AdminRequestDTO.java
+src/main/java/br/com/techchallenge/fiap/neighborfood/domain/dto/CategoriaDTO.java
+src/main/java/br/com/techchallenge/fiap/neighborfood/domain/dto/ClienteRequestDTO.java
+src/main/java/br/com/techchallenge/fiap/neighborfood/domain/dto/ItemPedido.java
+src/main/java/br/com/techchallenge/fiap/neighborfood/domain/dto/MimoDTO.java
+src/main/java/br/com/techchallenge/fiap/neighborfood/domain/dto/MimoRequestDTO.java
+src/main/java/br/com/techchallenge/fiap/neighborfood/domain/dto/PagamentoDTO.java
+src/main/java/br/com/techchallenge/fiap/neighborfood/domain/dto/PedidoRequestDTO.java
+src/main/java/br/com/techchallenge/fiap/neighborfood/domain/dto/ProdutoDTO.java
+src/main/java/br/com/techchallenge/fiap/neighborfood/domain/dto/StatusPedidoDTO.java

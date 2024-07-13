@@ -1,0 +1,45 @@
+services:
+
+  db:
+    image: postgres:16-alpine
+    volumes:
+      - postgresql_data:/var/lib/postgresql/data
+    container_name: neighborfood-database
+    env_file: ./env/postgres.env
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+    healthcheck:
+      test: pg_isready -d $$POSTGRES_DB -h db -p 5432 -U $$POSTGRES_USER
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  app:
+    image: migprogrammer/neighborfood-img:aws-v2
+    container_name: neighborfood-app
+    ports:
+      - "82:82"
+    env_file: ./env/app.env
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+    healthcheck:
+      test: curl -v http://app:82/neighborfood/menu
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  nginx:
+    image: nginx:stable-alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+    depends_on:
+      - app
+    restart: unless-stopped
+
+volumes:
+  postgresql_data:
