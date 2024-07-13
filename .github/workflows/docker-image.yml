@@ -1,4 +1,4 @@
-name: CI/CD with Docker and GitHub Actions
+name: CI/CD - NeighborFood
 
 on:
   push:
@@ -12,9 +12,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository 
-    - uses: actions/checkout@v4
-    
+
+    - uses: actions/checkout@v3
+
     - name: Build the Docker image
       run: docker build -t migprogrammer/neighborfood-img:latest .
       
