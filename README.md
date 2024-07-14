@@ -1,6 +1,6 @@
-<h2> Clean Architecture used</h2>
+<h2> Clean Architecture</h2>
 
-<h3>Project to - Project aims to refactor the architecture used in the project <a href="https://github.com/MiguelProgrammer/neighborfood">Neighborfood - Ports and Adapters</h3><hr>
+<h3>Project aims to refactor the architecture used in the project <a href="https://github.com/MiguelProgrammer/neighborfood">Neighborfood - Ports and Adapters</h3><hr>
 
 <h3>Neighborfood-app</h3>
 
