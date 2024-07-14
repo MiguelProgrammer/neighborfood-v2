@@ -5,11 +5,11 @@
 package br.com.techchallenge.fiap.neighborfood.adapters.inbound.response;
 
 import br.com.techchallenge.fiap.neighborfood.adapters.inbound.request.PedidoRequest;
-import br.com.techchallenge.fiap.neighborfood.adapters.outbound.repository.entities.PedidoEntity;
+import br.com.techchallenge.fiap.neighborfood.core.domain.model.enums.Status;
+import br.com.techchallenge.fiap.neighborfood.core.domain.model.pedido.Item;
+import br.com.techchallenge.fiap.neighborfood.core.domain.model.pedido.Pedido;
 import br.com.techchallenge.fiap.neighborfood.domain.dto.*;
-import br.com.techchallenge.fiap.neighborfood.domain.model.Item;
-import br.com.techchallenge.fiap.neighborfood.domain.model.Pedido;
-import br.com.techchallenge.fiap.neighborfood.domain.model.enums.Status;
+import br.com.techchallenge.fiap.neighborfood.infrastructure.persistence.order.entities.PedidoEntity;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -118,7 +118,7 @@ public class AcompanhamentoResponse {
 
     public PedidoRequest convertPedidoRequest(Pedido pedido) {
         PedidoRequest request = new PedidoRequest();
-        List<Item> itens =  new ArrayList<>();
+        List<Item> itens = new ArrayList<>();
         request.setId(pedido.getId());
         request.setIdCliente(pedido.getIdCliente());
         pedido.getItensProdutos().forEach(item -> {

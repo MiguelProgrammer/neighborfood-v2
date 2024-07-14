@@ -4,11 +4,11 @@
 
 package br.com.techchallenge.fiap.neighborfood.adapters.inbound.request;
 
+import br.com.techchallenge.fiap.neighborfood.core.domain.model.pedido.Item;
+import br.com.techchallenge.fiap.neighborfood.core.domain.model.pedido.Produto;
+import br.com.techchallenge.fiap.neighborfood.core.domain.model.enums.Categoria;
 import br.com.techchallenge.fiap.neighborfood.domain.dto.PedidoRequestDTO;
 import br.com.techchallenge.fiap.neighborfood.domain.dto.ProdutoDTO;
-import br.com.techchallenge.fiap.neighborfood.domain.model.Item;
-import br.com.techchallenge.fiap.neighborfood.domain.model.Produto;
-import br.com.techchallenge.fiap.neighborfood.domain.model.enums.Categoria;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -35,7 +35,6 @@ public class PedidoRequest {
         request.setIdCliente(pedidoRequest.getIdCliente());
 
         pedidoRequest.getItensPedido().forEach(item -> {
-
             Item it = new Item();
             it.setId(item.getId());
             it.setIdPedido(item.getIdPedido());

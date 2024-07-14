@@ -4,16 +4,14 @@
 
 package br.com.techchallenge.fiap.neighborfood.config.exception;
 
-import br.com.techchallenge.fiap.neighborfood.adapters.outbound.repository.UserAdapter;
-import br.com.techchallenge.fiap.neighborfood.adapters.outbound.repository.jpa.ClienteRepository;
+import br.com.techchallenge.fiap.neighborfood.infrastructure.gateways.UserRepositoryGateway;
+import br.com.techchallenge.fiap.neighborfood.infrastructure.persistence.user.ClienteRepository;
+import br.com.techchallenge.fiap.neighborfood.application.gateways.PedidoGateway;
+import br.com.techchallenge.fiap.neighborfood.application.usecase.order.acompanhachain.status.AcompanhamentoUseCase;
 import br.com.techchallenge.fiap.neighborfood.domain.ports.inbound.*;
 import br.com.techchallenge.fiap.neighborfood.domain.ports.outbound.*;
 import br.com.techchallenge.fiap.neighborfood.domain.usecase.*;
 import br.com.techchallenge.fiap.neighborfood.domain.usecase.acompanhachain.AcompanhamentoChain;
-import br.com.techchallenge.fiap.neighborfood.domain.usecase.acompanhachain.anemic.AcompanhamentoChainFinalizadoImpl;
-import br.com.techchallenge.fiap.neighborfood.domain.usecase.acompanhachain.anemic.AcompanhamentoChainPreparacaoImpl;
-import br.com.techchallenge.fiap.neighborfood.domain.usecase.acompanhachain.anemic.AcompanhamentoChainProntoImpl;
-import br.com.techchallenge.fiap.neighborfood.domain.usecase.acompanhachain.anemic.AcompanhamentoChainRecebidoImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -23,47 +21,47 @@ public class BeanConfig {
 
 
     @Bean
-    public AcompanhamentoUseCasePort acompanhamentoUseCaseImpl(PedidoUseCaseAdapterPort pedidoUseCaseAdapterPort, AcompanhamentoChain statusPedidoChain) {
-        return new AcompanhamentoUseCaseImpl(pedidoUseCaseAdapterPort, statusPedidoChain);
+    public br.com.techchallenge.fiap.neighborfood.domain.ports.inbound.AcompanhamentoUseCasePort acompanhamentoUseCaseImpl(PedidoGateway pedidoGateway, AcompanhamentoChain statusPedidoChain) {
+        return new AcompanhamentoUseCase(pedidoGateway, statusPedidoChain);
     }
 
     @Bean
     public AcompanhamentoChain acompanhamentoChainPronto() {
-        return new AcompanhamentoChainProntoImpl();
+        return new br.com.techchallenge.fiap.neighborfood.domain.usecase.acompanhachain.anemic.AcompanhamentoChainPronto();
     }
 
     @Bean
     @Primary
     public AcompanhamentoChain acompanhamentoChainRecebido() {
-        return new AcompanhamentoChainRecebidoImpl();
+        return new br.com.techchallenge.fiap.neighborfood.domain.usecase.acompanhachain.anemic.AcompanhamentoChainRecebido();
     }
 
     @Bean
     public AcompanhamentoChain acompanhamentoChainPreparacao() {
-        return new AcompanhamentoChainPreparacaoImpl();
+        return new br.com.techchallenge.fiap.neighborfood.domain.usecase.acompanhachain.anemic.AcompanhamentoChainPreparacao();
     }
 
     @Bean
     public AcompanhamentoChain acompanhamentoChainFinalizado() {
-        return new AcompanhamentoChainFinalizadoImpl();
+        return new br.com.techchallenge.fiap.neighborfood.domain.usecase.acompanhachain.anemic.AcompanhamentoChainFinalizado();
     }
 
     @Bean
-    public AdminUseCasePort adminUseCasePort(PedidoUseCaseAdapterPort pedidoUseCaseAdapterPort, UserAdapter userAdapter) {
-        return new AdmUseCaseImpl(pedidoUseCaseAdapterPort, userAdapter);
+    public br.com.techchallenge.fiap.neighborfood.domain.ports.inbound.AdminUseCasePort adminUseCasePort(PedidoGateway pedidoGateway, UserRepositoryGateway userRepositoryGateway) {
+        return new AdmUseCaseImpl(pedidoGateway, userRepositoryGateway);
     }
 
     @Bean
-    public ProdutoUseCasePort estoqueUseCasePort(ProdutoUseCaseAdapterPort estoqueUseCaseAdapterPort,
-                                                 LoginUseCaseAdapterPort loginAdapter, UserAdapter userdapter) {
+    public br.com.techchallenge.fiap.neighborfood.domain.ports.inbound.ProdutoUseCasePort estoqueUseCasePort(ProdutoUseCaseAdapterPort estoqueUseCaseAdapterPort,
+                                                                                                             LoginUseCaseAdapterPort loginAdapter, UserRepositoryGateway userdapter) {
         return new ProdutoUseCaseImpl(estoqueUseCaseAdapterPort, loginAdapter, userdapter);
     }
 
     @Bean
     public LoginUseCasePort loginUseCasePort(LoginUseCaseAdapterPort loginAdapterPort,
                                              NotificationUseCaseAdapterPort notificacaoAdapter,
-                                             UserAdapter userAdapter) {
-        return new LoginUseCaseImpl(loginAdapterPort, notificacaoAdapter, userAdapter);
+                                             UserRepositoryGateway userRepositoryGateway) {
+        return new LoginUseCaseImpl(loginAdapterPort, notificacaoAdapter, userRepositoryGateway);
     }
 
     @Bean
@@ -73,17 +71,17 @@ public class BeanConfig {
     }
 
     @Bean
-    public PagamentoUseCasePort pagamentoUseCasePort(PedidoUseCaseAdapterPort pedidoUseCaseAdapterPort, AcompanhamentoUseCasePort acompanhamentoUseCasePort) {
-        return new PagamentoUseCaseImpl(pedidoUseCaseAdapterPort, acompanhamentoUseCasePort);
+    public PagamentoUseCasePort pagamentoUseCasePort(PedidoGateway pedidoGateway, AcompanhamentoUseCasePort acompanhamentoUseCasePort) {
+        return new PagamentoUseCaseImpl(pedidoGateway, acompanhamentoUseCasePort);
     }
 
     @Bean
-    public PedidoUseCasePort pedidoUseCasePort(PedidoUseCaseAdapterPort pedidoUseCaseAdapterPort,
+    public PedidoUseCasePort pedidoUseCasePort(PedidoGateway pedidoGateway,
                                                ProdutoUseCaseAdapterPort estoqueUseCaseAdapterPort,
                                                NotificationUseCaseAdapterPort notificationUseCaseAdapterPort,
                                                AcompanhamentoUseCasePort acompanhamentoUseCasePort,
-                                               UserAdapter userAdapter) {
-        return new PedidoUseCaseImpl(pedidoUseCaseAdapterPort, estoqueUseCaseAdapterPort,
-                notificationUseCaseAdapterPort, acompanhamentoUseCasePort, userAdapter);
+                                               UserRepositoryGateway userRepositoryGateway) {
+        return new PedidoUseCaseImpl(pedidoGateway, estoqueUseCaseAdapterPort,
+                notificationUseCaseAdapterPort, acompanhamentoUseCasePort, userRepositoryGateway);
     }
 }
