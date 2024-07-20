@@ -94,16 +94,18 @@
                 <artifactId>openapi-generator-maven-plugin</artifactId>
                 <version>6.6.0</version>
                 <executions>
-                    <execution>
+
+                    <!--<execution>
+                        <id>api-login</id>
                         <goals>
                             <goal>generate</goal>
                         </goals>
-                        <configuration>
-                            <inputSpec>
+                            <configuration>
+                                <inputSpec>
                                 ${project.basedir}/src/main/resources/api/resource.yml
                             </inputSpec>
                             <generatorName>spring</generatorName>
-                            <modelPackage>br.com.techchallenge.fiap.neighborfood.domain.dto</modelPackage>
+                            <modelPackage>br.com.techchallenge.fiap.neighborfood.core.domain.dto</modelPackage>
                             <apiPackage>$generated-sources/swagger</apiPackage>
                             <configOptions>
                                 <sourceFolder>src/main/java/</sourceFolder>
@@ -116,7 +118,152 @@
                                 <typeMapping>Double=java.math.BigDecimal</typeMapping>
                             </typeMappings>
                         </configuration>
+                    </execution>-->
+                    <execution>
+                        <id>api-clientes</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                            <configuration>
+                                <inputSpec>
+                                ${project.basedir}/src/main/resources/api/resource_clientes.yml
+                            </inputSpec>
+                            <generatorName>spring</generatorName>
+                            <modelPackage>br.com.techchallenge.fiap.neighborfood.core.domain.dto</modelPackage>
+                            <apiPackage>$generated-sources/swagger/clientes</apiPackage>
+                            <configOptions>
+                                <sourceFolder>src/main/java/</sourceFolder>
+                                <delegatePattern>false</delegatePattern>
+                                <interfaceOnly>true</interfaceOnly>
+                                <useJakartaEe>true</useJakartaEe>
+                                <validateSpec>true</validateSpec>
+                            </configOptions>
+                            <typeMappings>
+                                <typeMapping>Double=java.math.BigDecimal</typeMapping>
+                            </typeMappings>
+                        </configuration>
                     </execution>
+                    <execution>
+                        <id>api-estoque</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                            <configuration>
+                                <inputSpec>
+                                ${project.basedir}/src/main/resources/api/resource_estoque.yml
+                            </inputSpec>
+                            <generatorName>spring</generatorName>
+                            <modelPackage>br.com.techchallenge.fiap.neighborfood.core.domain.dto</modelPackage>
+                            <apiPackage>$generated-sources/swagger/estoque</apiPackage>
+                            <configOptions>
+                                <sourceFolder>src/main/java/</sourceFolder>
+                                <delegatePattern>false</delegatePattern>
+                                <interfaceOnly>true</interfaceOnly>
+                                <useJakartaEe>true</useJakartaEe>
+                                <validateSpec>true</validateSpec>
+                            </configOptions>
+                            <typeMappings>
+                                <typeMapping>Double=java.math.BigDecimal</typeMapping>
+                            </typeMappings>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>api-acesso</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                            <configuration>
+                                <inputSpec>
+                                ${project.basedir}/src/main/resources/api/resource_acesso.yml
+                            </inputSpec>
+                            <generatorName>spring</generatorName>
+                            <modelPackage>br.com.techchallenge.fiap.neighborfood.core.domain.dto</modelPackage>
+                            <apiPackage>$generated-sources/swagger/acesso</apiPackage>
+                            <configOptions>
+                                <sourceFolder>src/main/java/</sourceFolder>
+                                <delegatePattern>false</delegatePattern>
+                                <interfaceOnly>true</interfaceOnly>
+                                <useJakartaEe>true</useJakartaEe>
+                                <validateSpec>true</validateSpec>
+                            </configOptions>
+                            <typeMappings>
+                                <typeMapping>Double=java.math.BigDecimal</typeMapping>
+                            </typeMappings>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>api-pagamento</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                            <configuration>
+                                <inputSpec>
+                                ${project.basedir}/src/main/resources/api/resource_pagamento.yml
+                            </inputSpec>
+                            <generatorName>spring</generatorName>
+                            <modelPackage>br.com.techchallenge.fiap.neighborfood.core.domain.dto</modelPackage>
+                            <apiPackage>$generated-sources/swagger/pagamento</apiPackage>
+                            <configOptions>
+                                <sourceFolder>src/main/java/</sourceFolder>
+                                <delegatePattern>false</delegatePattern>
+                                <interfaceOnly>true</interfaceOnly>
+                                <useJakartaEe>true</useJakartaEe>
+                                <validateSpec>true</validateSpec>
+                            </configOptions>
+                            <typeMappings>
+                                <typeMapping>Double=java.math.BigDecimal</typeMapping>
+                            </typeMappings>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>api-pedido</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                            <configuration>
+                                <inputSpec>
+                                ${project.basedir}/src/main/resources/api/resource_pedido.yml
+                            </inputSpec>
+                            <generatorName>spring</generatorName>
+                            <modelPackage>br.com.techchallenge.fiap.neighborfood.core.domain.dto</modelPackage>
+                            <apiPackage>$generated-sources/swagger/pedido</apiPackage>
+                            <configOptions>
+                                <sourceFolder>src/main/java/</sourceFolder>
+                                <delegatePattern>false</delegatePattern>
+                                <interfaceOnly>true</interfaceOnly>
+                                <useJakartaEe>true</useJakartaEe>
+                                <validateSpec>true</validateSpec>
+                            </configOptions>
+                            <typeMappings>
+                                <typeMapping>Double=java.math.BigDecimal</typeMapping>
+                            </typeMappings>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>api-acompanhamento</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                            <configuration>
+                                <inputSpec>
+                                ${project.basedir}/src/main/resources/api/resource_acompanhamento.yml
+                            </inputSpec>
+                            <generatorName>spring</generatorName>
+                            <modelPackage>br.com.techchallenge.fiap.neighborfood.core.domain.dto</modelPackage>
+                            <apiPackage>$generated-sources/swagger/acompanhamento</apiPackage>
+                            <configOptions>
+                                <sourceFolder>src/main/java/</sourceFolder>
+                                <delegatePattern>false</delegatePattern>
+                                <interfaceOnly>true</interfaceOnly>
+                                <useJakartaEe>true</useJakartaEe>
+                                <validateSpec>true</validateSpec>
+                            </configOptions>
+                            <typeMappings>
+                                <typeMapping>Double=java.math.BigDecimal</typeMapping>
+                            </typeMappings>
+                        </configuration>
+                    </execution>
+
                 </executions>
             </plugin>
         </plugins>

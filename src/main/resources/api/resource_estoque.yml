@@ -1,0 +1,150 @@
+openapi: 3.0.0
+info:
+  title: Swagger NeighborFood - Estoque - OpenAPI 3.0
+  description: |-
+    Fiap Challenge - Phase 2 - NeighborFood Project
+  termsOfService: http://swagger.io/terms/
+  contact:
+    email: miguel.silva@mackenzista.com.br
+  version: 0.0.2
+
+tags:
+
+  - name: orders
+    description: "Lista os pedidos"
+  - name: products
+    description: "Gerenciamento de produtos"
+
+
+paths:
+
+  /neighborfood/painel/pedido/lista/{idAdmin}:
+    get:
+      tags:
+        - orders
+      summary: Lista de pedidos efetuados contendo seus clientes, itens, status, valores e data de pedido e data de entrega.
+      description: Lista os pedidos recebidos
+      operationId: listOrders
+      parameters:
+        - name: idAdmin
+          in: path
+          description: id identificador do administrador
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: Lista de pedidos
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/AcompanhamentoResponseDTO'
+
+        '400':
+          description: Id inválido
+        '404':
+          description: Mimo não disponível
+
+  /neighborfood/painel/produto/cadastro/{idAdmin}:
+    get:
+      tags:
+        - products
+      summary: Cadastra produtos
+      description: Cadastra produtos em lote
+      operationId: registerProduct
+      parameters:
+        - name: idAdmin
+          in: path
+          description: id identificador do administrador
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: Produtos cadastrados
+          content:
+            application/json:
+              schema:
+                $ref: ""
+        '400':
+          description: Id inválido
+        '404':
+          description: Produto inválido
+
+
+components:
+  schemas:
+
+    PedidoRequestDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        idCliente:
+          type: integer
+          format: int64
+        itensPedido:
+          type: array
+          items:
+            $ref: '#/components/schemas/ItemPedido'
+
+    ItemPedido:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        idPedido:
+          type: integer
+          format: int64
+        produto:
+          $ref: '#/components/schemas/ProdutoDTO'
+
+    ProdutoDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        nome:
+          type: string
+        preco:
+          type: number
+          format: double
+        categoria:
+          $ref: '#/components/schemas/CategoriaDTO'
+        descricao:
+          type: string
+        img:
+          type: string
+
+    AcompanhamentoResponseDTO:
+      type: object
+      properties:
+        pedido:
+          $ref: '#/components/schemas/PedidoRequestDTO'
+        status:
+          $ref: '#/components/schemas/StatusPedidoDTO'
+        total:
+          type: number
+          format: double
+
+    StatusPedidoDTO:
+      type: string
+      enum:
+        - RECEBIDO
+        - EM_PREPARACAO
+        - PRONTO
+        - FINALIZADO
+
+    CategoriaDTO:
+      type: string
+      enum:
+        - LANCHE
+        - ACOMPANHAMENTO
+        - BEBIDA
+        - SOBREMESA

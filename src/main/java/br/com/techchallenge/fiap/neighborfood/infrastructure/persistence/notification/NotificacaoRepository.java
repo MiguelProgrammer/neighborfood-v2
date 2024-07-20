@@ -5,7 +5,7 @@
 
 package br.com.techchallenge.fiap.neighborfood.infrastructure.persistence.notification;
 
-import br.com.techchallenge.fiap.neighborfood.domain.model.Mimo;
+import br.com.techchallenge.fiap.neighborfood.core.domain.acompanhamento.Mimo;
 import br.com.techchallenge.fiap.neighborfood.infrastructure.persistence.notification.entities.MimoEntity;
 import br.com.techchallenge.fiap.neighborfood.infrastructure.persistence.notification.entities.NotificacaoEntity;
 import org.springframework.data.jpa.repository.JpaRepository;

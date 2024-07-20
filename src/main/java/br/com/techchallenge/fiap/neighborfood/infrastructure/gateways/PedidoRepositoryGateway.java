@@ -4,13 +4,13 @@
 
 package br.com.techchallenge.fiap.neighborfood.infrastructure.gateways;
 
-import br.com.techchallenge.fiap.neighborfood.adapters.inbound.response.AcompanhamentoResponse;
-import br.com.techchallenge.fiap.neighborfood.application.gateways.PedidoGateway;
-import br.com.techchallenge.fiap.neighborfood.core.domain.model.pedido.Item;
-import br.com.techchallenge.fiap.neighborfood.core.domain.model.pedido.Pedido;
-import br.com.techchallenge.fiap.neighborfood.core.domain.model.pedido.Produto;
-import br.com.techchallenge.fiap.neighborfood.core.domain.model.enums.Categoria;
-import br.com.techchallenge.fiap.neighborfood.core.domain.model.enums.Status;
+import br.com.techchallenge.fiap.neighborfood.adapter.controllers.AcompanhamentoResponse;
+import br.com.techchallenge.fiap.neighborfood.adapter.gateways.PedidoGateway;
+import br.com.techchallenge.fiap.neighborfood.core.domain.enums.Categoria;
+import br.com.techchallenge.fiap.neighborfood.core.domain.enums.Status;
+import br.com.techchallenge.fiap.neighborfood.core.domain.pedido.Item;
+import br.com.techchallenge.fiap.neighborfood.core.domain.pedido.Pedido;
+import br.com.techchallenge.fiap.neighborfood.core.domain.pedido.Produto;
 import br.com.techchallenge.fiap.neighborfood.infrastructure.persistence.order.ItensRepository;
 import br.com.techchallenge.fiap.neighborfood.infrastructure.persistence.order.PagamentoRepository;
 import br.com.techchallenge.fiap.neighborfood.infrastructure.persistence.order.PedidoRepository;
@@ -61,9 +61,9 @@ public class PedidoRepositoryGateway implements PedidoGateway {
             }
         }
 
-        //entity.setId(pedido.getId());
+        entity.setId(pedido.getId());
         entity.setDataPedido(pedido.getDataPedido());
-        //entity.setIdCliente(pedido.getIdCliente());
+        entity.setIdCliente(pedido.getIdCliente());
         entity.setDataPedido(pedido.getDataPedido());
         entity.setDataPedidoFim(pedido.getDataPedidoFim());
         entity.setStatus(pedido.getStatus());
@@ -179,7 +179,7 @@ public class PedidoRepositoryGateway implements PedidoGateway {
     }
 
     @Override
-    public List<PedidoEntity> pedidosExecute() {
+    public List<PedidoEntity> pedidos() {
         List<PedidoEntity> pedidos = pedidoRepository.findAll();
         pedidos.forEach(pedido -> {
             pedido.setItensProdutos(itensRepository.findByIdPedido(pedido.getId()));

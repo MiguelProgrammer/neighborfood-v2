@@ -1,0 +1,64 @@
+openapi: 3.0.0
+info:
+  title: Swagger NeighborFood - Mimos - OpenAPI 3.0
+  description: |-
+    Fiap Challenge - Phase 2 - NeighborFood Project
+  termsOfService: http://swagger.io/terms/
+  contact:
+    email: miguel.silva@mackenzista.com.br
+  version: 0.0.2
+
+tags:
+
+  - name: customers
+    description: "Para gerenciamento de campanhas promocionais"
+
+paths:
+
+  /neighborfood/painel/cliente:
+    post:
+      tags:
+        - customers
+      summary: Envia mimo ao último cliente que realizou um pedido
+      description: Envia mimo ao cliente
+      operationId: sendBonus
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MimoRequestDTO'
+      responses:
+        '200':
+          description: Mimo enviado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MimoDTO'
+        '400':
+          description: Id inválido
+        '404':
+          description: Mimo não disponível
+
+components:
+  schemas:
+
+    MimoDTO:
+      type: object
+      properties:
+        codigo:
+          type: string
+        idCliente:
+          type: integer
+          format: int64
+        acao:
+          type: string
+        descricao:
+          type: string
+
+    MimoRequestDTO:
+      type: object
+      properties:
+        idCliente:
+          type: integer
+          format: int64

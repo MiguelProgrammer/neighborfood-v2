@@ -4,9 +4,12 @@
 
 package br.com.techchallenge.fiap.neighborfood.infrastructure.persistence.order.entities;
 
-import br.com.techchallenge.fiap.neighborfood.core.domain.model.enums.Status;
+import br.com.techchallenge.fiap.neighborfood.core.domain.enums.Status;
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.annotations.Cascade;
 
 import java.io.Serializable;
@@ -28,12 +31,12 @@ public class  PedidoEntity implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @Setter(AccessLevel.PROTECTED)
+    //@Setter(AccessLevel.PROTECTED)
     @Column(name = "id_pedido")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Setter(AccessLevel.PROTECTED)
+    //@Setter(AccessLevel.PROTECTED)
     @Column(name = "id_cliente")
     private Long idCliente;
 

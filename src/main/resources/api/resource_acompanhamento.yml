@@ -1,0 +1,118 @@
+openapi: 3.0.0
+info:
+  title: Swagger NeighborFood - Acompanhamento - OpenAPI 3.0
+  description: |-
+    Fiap Challenge - Phase 2 - NeighborFood Project
+  termsOfService: http://swagger.io/terms/
+  contact:
+    email: miguel.silva@mackenzista.com.br
+  version: 0.0.2
+
+tags:
+
+  - name: follow-up
+    description: "Acompanhar status do pedido"
+
+paths:
+
+  /neighborfood/acompanhamento/{idPedido}:
+    get:
+      tags:
+        - follow-up
+      summary: Procura o status de um pedido
+      description: Retorna o status de um pedido
+      operationId: findOrderByIdOrder
+      parameters:
+        - name: idPedido
+          in: path
+          description: id do pedido
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AcompanhamentoResponseDTO'
+        '400':
+          description: Id inválido
+        '404':
+          description: Pedido não encontrado
+
+
+components:
+  schemas:
+
+    PedidoRequestDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        idCliente:
+          type: integer
+          format: int64
+        itensPedido:
+          type: array
+          items:
+            $ref: '#/components/schemas/ItemPedido'
+
+    ItemPedido:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        idPedido:
+          type: integer
+          format: int64
+        produto:
+          $ref: '#/components/schemas/ProdutoDTO'
+
+    ProdutoDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        nome:
+          type: string
+        preco:
+          type: number
+          format: double
+        categoria:
+          $ref: '#/components/schemas/CategoriaDTO'
+        descricao:
+          type: string
+        img:
+          type: string
+
+    AcompanhamentoResponseDTO:
+      type: object
+      properties:
+        pedido:
+          $ref: '#/components/schemas/PedidoRequestDTO'
+        status:
+          $ref: '#/components/schemas/StatusPedidoDTO'
+        total:
+          type: number
+          format: double
+
+    StatusPedidoDTO:
+      type: string
+      enum:
+        - RECEBIDO
+        - EM_PREPARACAO
+        - PRONTO
+        - FINALIZADO
+
+    CategoriaDTO:
+      type: string
+      enum:
+        - LANCHE
+        - ACOMPANHAMENTO
+        - BEBIDA
+        - SOBREMESA

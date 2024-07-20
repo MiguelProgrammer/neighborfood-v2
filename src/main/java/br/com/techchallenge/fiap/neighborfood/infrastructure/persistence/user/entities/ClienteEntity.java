@@ -6,7 +6,10 @@ package br.com.techchallenge.fiap.neighborfood.infrastructure.persistence.user.e
 
 import br.com.techchallenge.fiap.neighborfood.infrastructure.persistence.order.entities.PedidoEntity;
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.io.Serializable;
 import java.util.HashSet;
@@ -24,7 +27,7 @@ public class ClienteEntity implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @Setter(AccessLevel.PROTECTED)
+    //@Setter(AccessLevel.PROTECTED)
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

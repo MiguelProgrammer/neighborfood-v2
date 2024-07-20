@@ -8,4 +8,4 @@
                           /\____/
                           \_/__/
 ${application.title} ${application.version}
-Powered by Spring Boot ${spring-boot.version} - project for phase 1 - postgraduate - MiguelProgrammer
+Powered by Spring Boot ${spring-boot.version} - project for phase 2 - postgraduate - MiguelProgrammer

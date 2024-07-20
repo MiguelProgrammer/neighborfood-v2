@@ -4,12 +4,12 @@
 
 package br.com.techchallenge.fiap.neighborfood.infrastructure.gateways;
 
-import br.com.techchallenge.fiap.neighborfood.adapters.inbound.request.AdminRequest;
-import br.com.techchallenge.fiap.neighborfood.adapters.inbound.request.ClienteRequest;
-import br.com.techchallenge.fiap.neighborfood.adapters.inbound.request.UsuarioRequest;
-import br.com.techchallenge.fiap.neighborfood.application.gateways.AccessGateway;
-import br.com.techchallenge.fiap.neighborfood.core.domain.model.usuario.Usuario;
-import br.com.techchallenge.fiap.neighborfood.infrastructure.gateways.mapper.MapperUser;
+import br.com.techchallenge.fiap.neighborfood.adapter.gateways.AccessGateway;
+import br.com.techchallenge.fiap.neighborfood.adapter.inbound.AdminRequest;
+import br.com.techchallenge.fiap.neighborfood.adapter.inbound.ClienteRequest;
+import br.com.techchallenge.fiap.neighborfood.adapter.inbound.UsuarioRequest;
+import br.com.techchallenge.fiap.neighborfood.adapter.presenter.MapperUser;
+import br.com.techchallenge.fiap.neighborfood.core.domain.usuario.Usuario;
 import br.com.techchallenge.fiap.neighborfood.infrastructure.persistence.user.AdmRepository;
 import br.com.techchallenge.fiap.neighborfood.infrastructure.persistence.user.ClienteRepository;
 import br.com.techchallenge.fiap.neighborfood.infrastructure.persistence.user.entities.AdminEntity;
@@ -26,6 +26,7 @@ public class LoginRepositoryGateway implements AccessGateway {
     public LoginRepositoryGateway(AdmRepository admRepository, ClienteRepository clienteRepository) {
         this.admRepository = admRepository;
         this.clienteRepository = clienteRepository;
+        mapperUser = new MapperUser();
     }
 
     @Override

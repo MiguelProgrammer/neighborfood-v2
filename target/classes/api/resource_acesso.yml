@@ -1,0 +1,141 @@
+openapi: 3.0.0
+info:
+  title: Swagger NeighborFood - Login & Cadastro - OpenAPI 3.0
+  description: |-
+    Fiap Challenge - Phase 2 - NeighborFood Project
+  termsOfService: http://swagger.io/terms/
+  contact:
+    email: miguel.silva@mackenzista.com.br
+  version: 0.0.2
+
+tags:
+
+  - name: login
+    description: "Realizar login, com cpf"
+  - name: loginAdm
+    description: "Realizar login, com cpf"
+  - name: register
+    description: "Se cadastrar via nome, email e cpf"
+  - name: registerAdm
+    description: "Se cadastrar via nome, email e cpf"
+
+
+paths:
+
+  /neighborfood/login:
+    post:
+      tags:
+        - login
+      summary: "Se cadastrar, logar"
+      description: "Identificação do cliente"
+      operationId: login
+      requestBody:
+        description: Identifica um cliente logado
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ClienteRequestDTO'
+      responses:
+        '200':
+          description: Usuário logado
+          content:
+            application/json:
+              schema:
+                $ref: ""
+        '400':
+          description: request inválida
+
+  /neighborfood/cadastro:
+    post:
+      tags:
+        - register
+      summary: "Se cadastrar, logar"
+      description: "Cria cliente"
+      operationId: register
+      requestBody:
+        description: Cria um novo cliente
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ClienteRequestDTO'
+      responses:
+        '200':
+          description: Usuário logado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClienteDTO'
+        '400':
+          description: request inválida
+
+  /neighborfood/painel/login:
+    post:
+      tags:
+        - loginAdm
+      summary: "Cadastrar adm, logar adm"
+      description: "Identificação do adm"
+      operationId: loginAdm
+      requestBody:
+        description: Identifica um adminsitrador logado
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdminRequestDTO'
+      responses:
+        '200':
+          description: Usuário logado
+          content:
+            application/json:
+              schema:
+                $ref: ""
+        '400':
+          description: request inválida
+
+  /neighborfood/painel/cadastro:
+    post:
+      tags:
+        - registerAdm
+      summary: "Se cadastrar, logar"
+      description: "Cria cliente"
+      operationId: registerAdm
+      requestBody:
+        description: Cria um novo administrador
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdminRequestDTO'
+      responses:
+        '200':
+          description: Usuário cadastrao
+          content:
+            application/json:
+              schema:
+                $ref: ""
+        '400':
+          description: request inválida
+
+components:
+  schemas:
+
+    AdminRequestDTO:
+      type: object
+      properties:
+        nome:
+          type: string
+        email:
+          type: string
+        cpf:
+          type: string
+
+    ClienteRequestDTO:
+      type: object
+      properties:
+        nome:
+          type: string
+        email:
+          type: string
+        cpf:
+          type: string
+
+    ClienteDTO:
+      type: object

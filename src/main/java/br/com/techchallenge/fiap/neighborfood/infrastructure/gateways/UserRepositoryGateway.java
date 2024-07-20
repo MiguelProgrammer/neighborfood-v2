@@ -4,9 +4,9 @@
 
 package br.com.techchallenge.fiap.neighborfood.infrastructure.gateways;
 
-import br.com.techchallenge.fiap.neighborfood.application.gateways.UserGateway;
-import br.com.techchallenge.fiap.neighborfood.core.domain.model.usuario.Usuario;
-import br.com.techchallenge.fiap.neighborfood.infrastructure.gateways.mapper.MapperUser;
+import br.com.techchallenge.fiap.neighborfood.adapter.gateways.UserGateway;
+import br.com.techchallenge.fiap.neighborfood.adapter.presenter.MapperUser;
+import br.com.techchallenge.fiap.neighborfood.core.domain.usuario.Usuario;
 import br.com.techchallenge.fiap.neighborfood.infrastructure.persistence.user.AdmRepository;
 import br.com.techchallenge.fiap.neighborfood.infrastructure.persistence.user.ClienteRepository;
 import br.com.techchallenge.fiap.neighborfood.infrastructure.persistence.user.entities.AdminEntity;

@@ -4,9 +4,8 @@
 
 package br.com.techchallenge.fiap.neighborfood.infrastructure.persistence.order.entities;
 
-import br.com.techchallenge.fiap.neighborfood.core.domain.model.enums.Categoria;
+import br.com.techchallenge.fiap.neighborfood.core.domain.enums.Categoria;
 import jakarta.persistence.*;
-import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -23,14 +22,13 @@ public class ItemEntity implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @Setter(AccessLevel.PROTECTED)
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column(name = "id_pedido")
     private Long idPedido = new PedidoEntity().getId();
 
-    @Setter(AccessLevel.PROTECTED)
+    //@Setter(AccessLevel.PROTECTED)
     @Column(name = "id_produto")
     private Long idProduto;
 

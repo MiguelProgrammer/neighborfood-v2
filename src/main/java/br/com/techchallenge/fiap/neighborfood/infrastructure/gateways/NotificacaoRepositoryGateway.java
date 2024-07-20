@@ -4,9 +4,9 @@
 
 package br.com.techchallenge.fiap.neighborfood.infrastructure.gateways;
 
-import br.com.techchallenge.fiap.neighborfood.application.gateways.NotificationGateway;
-import br.com.techchallenge.fiap.neighborfood.core.domain.model.acompanhamento.Mimo;
-import br.com.techchallenge.fiap.neighborfood.core.domain.model.acompanhamento.Notificacao;
+import br.com.techchallenge.fiap.neighborfood.adapter.gateways.NotificationGateway;
+import br.com.techchallenge.fiap.neighborfood.core.domain.acompanhamento.Mimo;
+import br.com.techchallenge.fiap.neighborfood.core.domain.acompanhamento.Notificacao;
 import br.com.techchallenge.fiap.neighborfood.infrastructure.persistence.notification.MimoRepository;
 import br.com.techchallenge.fiap.neighborfood.infrastructure.persistence.notification.NotificacaoRepository;
 import br.com.techchallenge.fiap.neighborfood.infrastructure.persistence.notification.entities.MimoEntity;

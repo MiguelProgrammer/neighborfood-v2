@@ -4,9 +4,12 @@
 
 package br.com.techchallenge.fiap.neighborfood.infrastructure.persistence.order.entities;
 
-import br.com.techchallenge.fiap.neighborfood.core.domain.model.enums.Categoria;
+import br.com.techchallenge.fiap.neighborfood.core.domain.enums.Categoria;
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -23,7 +26,7 @@ public class ProdutoEntity implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @Setter(AccessLevel.PROTECTED)
+    //@Setter(AccessLevel.PROTECTED)
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 

@@ -4,9 +4,9 @@
 
 package br.com.techchallenge.fiap.neighborfood.infrastructure.gateways;
 
-import br.com.techchallenge.fiap.neighborfood.adapters.inbound.response.AcompanhamentoResponse;
-import br.com.techchallenge.fiap.neighborfood.application.gateways.PagamentoGteway;
-import br.com.techchallenge.fiap.neighborfood.core.domain.model.pagamento.Pagamento;
+import br.com.techchallenge.fiap.neighborfood.adapter.controllers.AcompanhamentoResponse;
+import br.com.techchallenge.fiap.neighborfood.adapter.gateways.PagamentoGteway;
+import br.com.techchallenge.fiap.neighborfood.core.domain.pagamento.Pagamento;
 import br.com.techchallenge.fiap.neighborfood.infrastructure.persistence.order.PagamentoRepository;
 import org.springframework.stereotype.Component;
 
