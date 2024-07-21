@@ -5,7 +5,6 @@
 package br.com.techchallenge.fiap.neighborfood.core.usecase.estoque;
 
 import br.com.techchallenge.fiap.neighborfood.adapter.controllers.AcompanhamentoResponse;
-import br.com.techchallenge.fiap.neighborfood.config.exceptions.UsuarioException;
 import br.com.techchallenge.fiap.neighborfood.core.domain.enums.Status;
 import br.com.techchallenge.fiap.neighborfood.core.domain.pedido.Pedido;
 import br.com.techchallenge.fiap.neighborfood.infrastructure.gateways.PedidoRepositoryGateway;
@@ -32,8 +31,9 @@ public class AdmUseCase {
     public List<AcompanhamentoResponse> listaPedidos(Long idAdmin) {
         List<AcompanhamentoResponse> listaAcomp = new ArrayList<>();
 
+
         if (ObjectUtils.isEmpty(userRepositoryGateway.usuarioById(idAdmin))) {
-            throw new UsuarioException(MESSAGE);
+            log.info(MESSAGE);
         }
 
         log.info("Listando pedidos ...\n");

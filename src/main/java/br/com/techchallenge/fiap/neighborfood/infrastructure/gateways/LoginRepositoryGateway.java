@@ -5,15 +5,16 @@
 package br.com.techchallenge.fiap.neighborfood.infrastructure.gateways;
 
 import br.com.techchallenge.fiap.neighborfood.adapter.gateways.AccessGateway;
-import br.com.techchallenge.fiap.neighborfood.adapter.inbound.AdminRequest;
-import br.com.techchallenge.fiap.neighborfood.adapter.inbound.ClienteRequest;
 import br.com.techchallenge.fiap.neighborfood.adapter.inbound.UsuarioRequest;
 import br.com.techchallenge.fiap.neighborfood.adapter.presenter.MapperUser;
+import br.com.techchallenge.fiap.neighborfood.core.domain.usuario.Admin;
+import br.com.techchallenge.fiap.neighborfood.core.domain.usuario.Cliente;
 import br.com.techchallenge.fiap.neighborfood.core.domain.usuario.Usuario;
 import br.com.techchallenge.fiap.neighborfood.infrastructure.persistence.user.AdmRepository;
 import br.com.techchallenge.fiap.neighborfood.infrastructure.persistence.user.ClienteRepository;
 import br.com.techchallenge.fiap.neighborfood.infrastructure.persistence.user.entities.AdminEntity;
 import br.com.techchallenge.fiap.neighborfood.infrastructure.persistence.user.entities.ClienteEntity;
+import org.apache.commons.lang3.ObjectUtils;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -31,37 +32,99 @@ public class LoginRepositoryGateway implements AccessGateway {
 
     @Override
     public Usuario login(UsuarioRequest request) {
-        return this.getUsuario(request);
+        return this.getUsuario(this.requestToDomain(request));
     }
 
     @Override
     public Usuario cadastro(UsuarioRequest request) {
-        return this.registerUsuario(request);
+        return this.registerUsuario(this.requestToDomain(request));
+    }
+
+    /**
+     * @param request
+     * @return
+     */
+    @Override
+    public Usuario cadastroAdm(UsuarioRequest request) {
+        Usuario usuario = this.requestToDomain(request);
+        Admin admin = this.requestToDomainAdmin(usuario);
+        return this.registerUsuario(admin);
     }
 
 
-    private Usuario registerUsuario(UsuarioRequest request) {
+    private Usuario registerUsuario(Usuario request) {
 
-        if (request instanceof ClienteRequest clienteRequest) {
-            ClienteEntity cliente = mapperUser.fromEntity(clienteRequest);
-            clienteRepository.save(cliente);
-            return mapperUser.fromModel(cliente);
+        Usuario usuario;
+
+        if (request instanceof Admin adminRequest) {
+            AdminEntity admin = mapperUser.fromEntity(adminRequest);
+            admRepository.save(admin);
+            usuario = mapperUser.fromModel(admin);
+        } else {
+            Cliente clienteDomain = this.requestToDomainCliente(request);
+            ClienteEntity clienteEntity = mapperUser.fromEntity(clienteDomain);
+            clienteRepository.save(clienteEntity);
+            usuario = mapperUser.fromModel(clienteEntity);
         }
 
-        AdminRequest adminRequest = (AdminRequest) request;
-        AdminEntity usuario = mapperUser.fromEntity(adminRequest);
-        admRepository.save(usuario);
-        return mapperUser.fromModel(usuario);
+        return usuario;
     }
 
-    private Usuario getUsuario(UsuarioRequest request) {
 
-        if (request instanceof ClienteRequest clienteRequest) {
-            ClienteEntity cliente = clienteRepository.findByCpf(clienteRequest.getCpf());
-            return mapperUser.fromModel(cliente);
+    private Usuario getUsuario(Usuario request) {
+
+        Usuario usuario = new Usuario();
+        ClienteEntity cliente = clienteRepository.findByCpf(request.getCpf());
+
+        if (!ObjectUtils.isEmpty(cliente)) {
+            usuario = mapperUser.fromModel(cliente);
+        } else {
+            AdminEntity admin = admRepository.findByCpf(request.getCpf());
+            if (!ObjectUtils.isEmpty(admin)) {
+                usuario = mapperUser.fromModel(admin);
+            }
         }
-
-        AdminEntity usuario = admRepository.findByCpf(request.getCpf());
-        return mapperUser.fromModel(usuario);
+        return usuario;
     }
+
+
+    /**
+     * MAPEIA REQUEST PARA DOMINIO
+     * @param request
+     * @return
+     */
+    private Usuario requestToDomain(UsuarioRequest request){
+        Usuario usuario = new Usuario();
+        usuario.setCpf(request.getCpf());
+        usuario.setEmail(request.getEmail());
+        usuario.setNome(request.getNome());
+        return usuario;
+    }
+
+    /**
+     * MAPEIA REQUEST PARA DOMINIO CLIENTE
+     * @param request
+     * @return
+     */
+    private Cliente requestToDomainCliente(Usuario request){
+        Cliente cliente = new Cliente();
+        cliente.setCpf(request.getCpf());
+        cliente.setEmail(request.getEmail());
+        cliente.setNome(request.getNome());
+        return cliente;
+    }
+
+    /**
+     * MAPEIA REQUEST PARA DOMINIO ADMIN
+     * @param request
+     * @return
+     */
+    private Admin requestToDomainAdmin(Usuario request){
+        Admin admin = new Admin();
+        admin.setCpf(request.getCpf());
+        admin.setEmail(request.getEmail());
+        admin.setNome(request.getNome());
+        return admin;
+    }
+
 }

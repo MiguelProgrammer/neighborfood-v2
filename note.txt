@@ -1,0 +1,9 @@
+Api rest
+	-> controler domain com request dto
+		-> usecase
+			-> gateway (request)
+				-> repositoryGateway (mapea para o dominio)
+					-> dtbase
+				<- presenter (entitie)
+		<- usecase (domain)
+	<- controller domain com response domain

@@ -1,4 +1,5 @@
-package br.com.techchallenge.fiap.neighborfood.core.domain.usuario;/*
+package br.com.techchallenge.fiap.neighborfood.core.domain.usuario;
+/*
  * Copyright (c) 2024. MiguelProgrammer
  */
 
@@ -10,8 +11,7 @@ public class Admin extends Usuario {
     }
 
     public Admin(Long id, String nome, String email, String cpf, String notificacao) {
-        super(id, nome, email, cpf);
-        this.notificacao = notificacao;
+        super(id, nome, email, cpf, notificacao);
     }
 
     public String getNotificacao() {
@@ -20,5 +20,12 @@ public class Admin extends Usuario {
 
     public void setNotificacao(String notificacao) {
         this.notificacao = notificacao;
+    }
+
+    @Override
+    public String toString() {
+        return "Admin{" +
+                "notificacao='" + notificacao + '\'' +
+                '}';
     }
 }

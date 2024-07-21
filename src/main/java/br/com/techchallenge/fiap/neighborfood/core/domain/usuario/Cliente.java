@@ -15,8 +15,8 @@ public class Cliente extends Usuario {
     public Cliente() {
     }
 
-    public Cliente(Long id, String nome, String email, String cpf, Set<Pedido> pedidos) {
-        super(id, nome, email, cpf);
+    public Cliente(Long id, String nome, String email, String cpf, Set<Pedido> pedidos, String notificacao) {
+        super(id, nome, email, cpf, notificacao);
         this.pedidos = pedidos;
     }
 

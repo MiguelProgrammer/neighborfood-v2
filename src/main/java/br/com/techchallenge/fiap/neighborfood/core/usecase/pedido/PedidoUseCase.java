@@ -7,7 +7,6 @@ package br.com.techchallenge.fiap.neighborfood.core.usecase.pedido;
 import br.com.techchallenge.fiap.neighborfood.adapter.controllers.AcompanhamentoResponse;
 import br.com.techchallenge.fiap.neighborfood.adapter.inbound.PedidoRequest;
 import br.com.techchallenge.fiap.neighborfood.config.exceptions.PedidoException;
-import br.com.techchallenge.fiap.neighborfood.config.exceptions.UsuarioException;
 import br.com.techchallenge.fiap.neighborfood.core.domain.acompanhamento.Notificacao;
 import br.com.techchallenge.fiap.neighborfood.core.domain.enums.Categoria;
 import br.com.techchallenge.fiap.neighborfood.core.domain.enums.Status;
@@ -64,7 +63,7 @@ public class PedidoUseCase {
         Cliente cliente = (Cliente) userRepositoryGateway.usuarioById(request.getIdCliente());
 
         if (cliente.getId() == null) {
-            throw new UsuarioException("CLIENTE NÃO ENCONTRADO/LOGADO");
+            log.info("CLIENTE NÃO ENCONTRADO/LOGADO");
         }
 
         pedido.setIdCliente(cliente.getId());

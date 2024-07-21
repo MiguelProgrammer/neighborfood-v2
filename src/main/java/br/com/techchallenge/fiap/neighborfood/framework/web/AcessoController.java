@@ -4,9 +4,8 @@
 
 package br.com.techchallenge.fiap.neighborfood.framework.web;
 
-
 import _generated_sources_swagger_acesso.NeighborfoodApi;
-import br.com.techchallenge.fiap.neighborfood.adapter.gateways.AccessGateway;
+import br.com.techchallenge.fiap.neighborfood.adapter.controllers.Login;
 import br.com.techchallenge.fiap.neighborfood.adapter.inbound.AdminRequest;
 import br.com.techchallenge.fiap.neighborfood.adapter.inbound.ClienteRequest;
 import br.com.techchallenge.fiap.neighborfood.core.domain.dto.AdminRequestDTO;
@@ -17,10 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AcessoController implements NeighborfoodApi {
 
-    private AccessGateway accessGateway;
+    private Login acesso;
 
-    public AcessoController(AccessGateway accessGateway) {
-        this.accessGateway = accessGateway;
+    public AcessoController(Login acesso) {
+        this.acesso = acesso;
     }
 
     /**
@@ -34,7 +33,7 @@ public class AcessoController implements NeighborfoodApi {
     @Override
     public ResponseEntity<Object> login(ClienteRequestDTO clienteRequestDTO) {
         return ResponseEntity.ok(
-                accessGateway.login(new ClienteRequest().dtoFromDomain(clienteRequestDTO)));
+                acesso.login(new ClienteRequest().dtoFromDomain(clienteRequestDTO)));
     }
 
     /**
@@ -47,8 +46,7 @@ public class AcessoController implements NeighborfoodApi {
      */
     @Override
     public ResponseEntity<Object> loginAdm(AdminRequestDTO adminRequestDTO) {
-        return ResponseEntity.ok(
-                accessGateway.login(new AdminRequest().dtoFromDomain(adminRequestDTO)));
+        return ResponseEntity.ok(acesso.login(new AdminRequest().dtoFromDomain(adminRequestDTO)));
     }
 
     /**
@@ -62,7 +60,7 @@ public class AcessoController implements NeighborfoodApi {
     @Override
     public ResponseEntity<Object> register(ClienteRequestDTO clienteRequestDTO) {
         return ResponseEntity.ok(
-                accessGateway.cadastro(new ClienteRequest().dtoFromDomain(clienteRequestDTO)));
+                acesso.cadastro(new ClienteRequest().dtoFromDomain(clienteRequestDTO)));
     }
 
     /**
@@ -76,7 +74,7 @@ public class AcessoController implements NeighborfoodApi {
     @Override
     public ResponseEntity<Object> registerAdm(AdminRequestDTO adminRequestDTO) {
         return ResponseEntity.ok(
-                accessGateway.cadastro(new AdminRequest().dtoFromDomain(adminRequestDTO)));
+                acesso.cadastroAdm(new AdminRequest().dtoFromDomain(adminRequestDTO)));
     }
 
 }

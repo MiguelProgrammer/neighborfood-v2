@@ -6,40 +6,60 @@ package br.com.techchallenge.fiap.neighborfood.core.usecase.login;
 
 
 import br.com.techchallenge.fiap.neighborfood.adapter.inbound.UsuarioRequest;
-import br.com.techchallenge.fiap.neighborfood.config.exceptions.UsuarioException;
 import br.com.techchallenge.fiap.neighborfood.core.domain.Finals;
 import br.com.techchallenge.fiap.neighborfood.core.domain.usuario.Usuario;
 import br.com.techchallenge.fiap.neighborfood.infrastructure.gateways.LoginRepositoryGateway;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.ObjectUtils;
+
+import static br.com.techchallenge.fiap.neighborfood.core.domain.Finals.MESSAGE_SUCCESS;
+import static br.com.techchallenge.fiap.neighborfood.core.domain.Finals.MESSAGE_USUARIO_CADASTRADO;
 
 @Slf4j
 public class LoginUseCase {
 
-    private final LoginRepositoryGateway acesso;
     private Usuario usuario = new Usuario();
+    private LoginRepositoryGateway loginRepositoryGateway;
 
-    public LoginUseCase(LoginRepositoryGateway acesso) {
-        this.acesso = acesso;
+    public LoginUseCase(LoginRepositoryGateway loginRepositoryGateway) {
+        this.loginRepositoryGateway = loginRepositoryGateway;
     }
 
     public Usuario login(UsuarioRequest request) {
-        usuario = acesso.login(request);
-        if (usuario.getId() == null) {
-            throw new UsuarioException(Finals.MESSAGE);
+        this.usuario = loginRepositoryGateway.login(request);
+        if (this.usuario.getId() == null) {
+            log.info(Finals.MESSAGE);
         }
-        return usuario;
+        return this.usuario;
     }
 
     public Usuario cadastro(UsuarioRequest request) {
-        usuario = this.login(request);
-        if (cadastrado(usuario)) {
-            usuario = acesso.cadastro(request);
-            log.info(Finals.MESSAGE_SUCCESS);
-        }
-        return usuario;
+        cadastrado(request);
+        verificarSessao(loginRepositoryGateway.cadastro(request));
+        return this.usuario;
     }
 
-    private static boolean cadastrado(Usuario cadastro) {
-        return cadastro == null;
+    public Usuario cadastroAdm(UsuarioRequest request) {
+        cadastrado(request);
+        verificarSessao(loginRepositoryGateway.cadastroAdm(request));
+        return this.usuario;
+    }
+
+    private void verificarSessao(Usuario loginRepositoryGateway) {
+        if (ObjectUtils.isEmpty(usuario.getId())) {
+            this.usuario = loginRepositoryGateway;
+            log.info(MESSAGE_SUCCESS);
+        } else {
+            log.info(MESSAGE_USUARIO_CADASTRADO);
+        }
+    }
+
+    private Usuario cadastrado(UsuarioRequest cadastro) {
+        this.usuario = loginRepositoryGateway.login(cadastro);
+        this.usuario.setNotificacao(MESSAGE_SUCCESS);
+        if (!ObjectUtils.isEmpty(usuario.getId())) {
+            this.usuario.setNotificacao(MESSAGE_USUARIO_CADASTRADO);
+        }
+        return this.usuario;
     }
 }

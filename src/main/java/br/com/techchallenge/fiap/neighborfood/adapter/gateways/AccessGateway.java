@@ -12,5 +12,5 @@ public interface AccessGateway {
 
     Usuario login(UsuarioRequest request);
     Usuario cadastro(UsuarioRequest request);
-
+    Usuario cadastroAdm(UsuarioRequest request);
 }

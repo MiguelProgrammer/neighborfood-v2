@@ -4,9 +4,11 @@ package br.com.techchallenge.fiap.neighborfood.core.domain;/*
 
 public class Finals {
 
-    public static final String MESSAGE = "Usuário não encontrado ou não cadastrado!\n\n" +
+    public static final String MESSAGE = "\n\nUsuário não encontrado ou não cadastrado!\n" +
             "Por favor, verifique as informações inseridas.";
     public static final String MESSAGE_SUCCESS = "Usuário cadastrado com sucesso!";
+    public static final String MESSAGE_USUARIO_CADASTRADO = "Olá usuário, que bom ter você de volta!";
+    public static final String MESSAGE_ID_UTILIZADO = "ID utilizado para cadastro já utilizado!";
 
     public static final String MESSAGE_RECEBIDO = "" +
             "______________________________\n\n" +
@@ -36,3 +38,4 @@ public class Finals {
                     "Retire o quanto antes.\n\n" +
                     "______________________________\n\n";
 }
+
