@@ -4,63 +4,65 @@
 
 package br.com.techchallenge.fiap.neighborfood.core.usecase.pedido;
 
-import br.com.techchallenge.fiap.neighborfood.adapter.controllers.AcompanhamentoResponse;
+import br.com.techchallenge.fiap.neighborfood.adapter.gateways.*;
 import br.com.techchallenge.fiap.neighborfood.adapter.inbound.PedidoRequest;
 import br.com.techchallenge.fiap.neighborfood.config.exceptions.PedidoException;
 import br.com.techchallenge.fiap.neighborfood.core.domain.acompanhamento.Notificacao;
+import br.com.techchallenge.fiap.neighborfood.core.domain.dto.AcompanhamentoResponseDTO;
 import br.com.techchallenge.fiap.neighborfood.core.domain.enums.Categoria;
 import br.com.techchallenge.fiap.neighborfood.core.domain.enums.Status;
 import br.com.techchallenge.fiap.neighborfood.core.domain.pedido.Item;
 import br.com.techchallenge.fiap.neighborfood.core.domain.pedido.Pedido;
 import br.com.techchallenge.fiap.neighborfood.core.domain.pedido.Produto;
 import br.com.techchallenge.fiap.neighborfood.core.domain.usuario.Cliente;
-import br.com.techchallenge.fiap.neighborfood.infrastructure.gateways.*;
 import br.com.techchallenge.fiap.neighborfood.infrastructure.persistence.notification.entities.NotificacaoEntity;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.util.*;
 
+import static br.com.techchallenge.fiap.neighborfood.core.domain.Finals.*;
+
 @Slf4j
+@Component
 public class PedidoUseCase {
 
-    private static final String MESSAGE_ADM_ESTOQUE =
-            "Caro adm, por favor, veja a quantia de itens cadastrado no estoque!";
-    private static final String CLIENTE_NOT_FOUND = "\n\nCliente ou Pedido não encontrado!\n\n";
-    private static final String ITENS_EM_FALLTA = "\n\nItens selecionados em falta!\n\n";
 
-    private final PedidoRepositoryGateway pedidoRepositoryGateway;
-    private final EstoqueRepositoryGateway produtoRepositoryGateway;
-    private final NotificacaoRepositoryGateway notificacaoRepositoryGateway;
-    private final AcompanhamentoPedidoRepositorioGateway acompanhamentoPedidoRepositorioGateway;
-    private final UserRepositoryGateway userRepositoryGateway;
+    private final PedidoGateway pedidoGateway;
+    private final EstoqueGateway estoqueGateway;
+    private final NotificacaoGateway notificacaoGateway;
+    private final AcompanhamentoGateway acompanhamentoGateway;
+    private final UserGateway userGateway;
 
-    public PedidoUseCase(PedidoRepositoryGateway pedidoRepositoryGateway, EstoqueRepositoryGateway produtoRepositoryGateway, NotificacaoRepositoryGateway notificacaoRepositoryGateway, AcompanhamentoPedidoRepositorioGateway acompanhamentoPedidoRepositorioGateway, UserRepositoryGateway userRepositoryGateway) {
-        this.pedidoRepositoryGateway = pedidoRepositoryGateway;
-        this.produtoRepositoryGateway = produtoRepositoryGateway;
-        this.notificacaoRepositoryGateway = notificacaoRepositoryGateway;
-        this.acompanhamentoPedidoRepositorioGateway = acompanhamentoPedidoRepositorioGateway;
-        this.userRepositoryGateway = userRepositoryGateway;
+    public PedidoUseCase(PedidoGateway pedidoGateway, EstoqueGateway estoqueGateway,
+                         NotificacaoGateway notificacaoGateway, AcompanhamentoGateway acompanhamentoGateway,
+                         UserGateway userGateway) {
+        this.pedidoGateway = pedidoGateway;
+        this.estoqueGateway = estoqueGateway;
+        this.notificacaoGateway = notificacaoGateway;
+        this.acompanhamentoGateway = acompanhamentoGateway;
+        this.userGateway = userGateway;
     }
 
     public Object menuOpcionais() {
         HashMap<Categoria, Set> menuItens = new HashMap<>();
         for (Categoria opt : Categoria.values()) {
-            menuItens.put(opt, pedidoRepositoryGateway.menuOpcionais(opt));
+            menuItens.put(opt, pedidoGateway.menuOpcionais(opt));
         }
         return menuItens;
     }
 
 
-    public AcompanhamentoResponse pedido(PedidoRequest request) {
+    public AcompanhamentoResponseDTO pedido(PedidoRequest request) {
 
         Pedido pedido = new Pedido();
 
         List<Item> itensPedido = new ArrayList<>();
         Set<Produto> deleteProdutos = new HashSet<>();
-        AcompanhamentoResponse pedidoResponse = new AcompanhamentoResponse();
+        AcompanhamentoResponseDTO pedidoResponse = new AcompanhamentoResponseDTO();
 
-        Cliente cliente = (Cliente) userRepositoryGateway.usuarioById(request.getIdCliente());
+        Cliente cliente = (Cliente) userGateway.usuarioById(request.getIdCliente());
 
         if (cliente.getId() == null) {
             log.info("CLIENTE NÃO ENCONTRADO/LOGADO");
@@ -69,7 +71,7 @@ public class PedidoUseCase {
         pedido.setIdCliente(cliente.getId());
         request.getItensPedido().forEach(item -> {
 
-            Produto prod = produtoRepositoryGateway.findById(item.getIdProduto());
+            Produto prod = estoqueGateway.findById(item.getIdProduto());
 
             if (prod.getId() != null) {
                 pedido.setTotal(pedido.getTotal().add(prod.getPreco()));
@@ -100,23 +102,23 @@ public class PedidoUseCase {
 
         if (!pedido.getTotal().equals(BigDecimal.ZERO)) {
 
-            log.info(acompanhamentoPedidoRepositorioGateway.sms(pedido.getStatus()));
-            pedidoResponse = pedidoRepositoryGateway.pedido(pedido);
+            log.info(acompanhamentoGateway.sms(pedido.getStatus()));
+            pedidoResponse = pedidoGateway.pedido(pedido);
 
-            produtoRepositoryGateway.deleteAll(deleteProdutos);
+            estoqueGateway.deleteAll(deleteProdutos);
         } else {
             NotificacaoEntity notificacao = new NotificacaoEntity();
             notificacao.setDescricao(MESSAGE_ADM_ESTOQUE);
-            notificacaoRepositoryGateway.notifica(new Notificacao().entityfromDomain(notificacao));
+            notificacaoGateway.notifica(new Notificacao().entityfromDomain(notificacao));
             log.info(ITENS_EM_FALLTA);
         }
 
         return pedidoResponse;
     }
 
-    public AcompanhamentoResponse atualizarPedido(PedidoRequest pedido) {
-        Set<Item> itens = pedidoRepositoryGateway.findAllByIdPedido(pedido.getId());
-        Cliente cliente = (Cliente) userRepositoryGateway.usuarioById(pedido.getIdCliente());
+    public AcompanhamentoResponseDTO atualizarPedido(PedidoRequest pedido) {
+        Set<Item> itens = pedidoGateway.findAllByIdPedido(pedido.getId());
+        Cliente cliente = (Cliente) userGateway.usuarioById(pedido.getIdCliente());
         Set<Produto> produtos = new HashSet<>();
 
         if (cliente.getId() == null && produtos == null) {
@@ -134,32 +136,32 @@ public class PedidoUseCase {
             produtos.add(produto);
         });
 
-        produtoRepositoryGateway.repoemEstoque(produtos);
+        estoqueGateway.repoemEstoque(produtos);
 
-        pedidoRepositoryGateway.removeItens(itens);
-        Pedido pedidoRealizado = pedidoRepositoryGateway.findByIdPedido(pedido.getId());
-        pedidoRepositoryGateway.pedido(pedidoRealizado);
+        pedidoGateway.removeItens(itens);
+        Pedido pedidoRealizado = pedidoGateway.findByIdPedido(pedido.getId());
+        pedidoGateway.pedido(pedidoRealizado);
         pedidoRealizado.setTotal(BigDecimal.ZERO);
-        pedidoRepositoryGateway.commitUpdates(pedidoRealizado.domainFromEntity());
+        pedidoGateway.commitUpdates(pedidoRealizado.domainFromEntity());
 
 
         pedido.getItensPedido().forEach(item -> {
-            Pedido pedidoDTO = pedidoRepositoryGateway.findByIdPedido(pedido.getId());
+            Pedido pedidoDTO = pedidoGateway.findByIdPedido(pedido.getId());
             pedidoDTO.setTotal(pedidoDTO.getTotal().add(item.getPreco()));
-            pedidoRepositoryGateway.commitUpdates(pedidoDTO.domainFromEntity());
-            pedidoRepositoryGateway.saveItens(item);
-            pedidoRepositoryGateway.commitUpdates(pedidoDTO.domainFromEntity());
-            produtoRepositoryGateway.deleteByNome(item.getNome());
+            pedidoGateway.commitUpdates(pedidoDTO.domainFromEntity());
+            pedidoGateway.saveItens(item);
+            pedidoGateway.commitUpdates(pedidoDTO.domainFromEntity());
+            estoqueGateway.deleteByNome(item.getNome());
         });
 
         log.info("Pedido atualizado!");
 
-        return pedidoRepositoryGateway.atualizarPedido(pedidoRepositoryGateway.findByIdPedido(pedido.getId()));
+        return pedidoGateway.atualizarPedido(pedidoGateway.findByIdPedido(pedido.getId()));
 
     }
 
 
     public void removeItens(Set<Item> itens) {
-        pedidoRepositoryGateway.removeItens(itens);
+        pedidoGateway.removeItens(itens);
     }
 }

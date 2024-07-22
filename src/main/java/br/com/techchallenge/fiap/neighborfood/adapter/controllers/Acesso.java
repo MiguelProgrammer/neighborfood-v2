@@ -7,14 +7,12 @@ package br.com.techchallenge.fiap.neighborfood.adapter.controllers;
 import br.com.techchallenge.fiap.neighborfood.adapter.inbound.UsuarioRequest;
 import br.com.techchallenge.fiap.neighborfood.core.domain.usuario.Usuario;
 import br.com.techchallenge.fiap.neighborfood.core.usecase.login.LoginUseCase;
-import org.springframework.stereotype.Component;
 
-@Component
-public class Login {
+public class Acesso {
 
-    private LoginUseCase loginUseCase;
+    private final LoginUseCase loginUseCase;
 
-    public Login(LoginUseCase loginUseCase) {
+    public Acesso(LoginUseCase loginUseCase) {
         this.loginUseCase = loginUseCase;
     }
 

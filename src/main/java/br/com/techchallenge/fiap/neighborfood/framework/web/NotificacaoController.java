@@ -6,17 +6,16 @@ package br.com.techchallenge.fiap.neighborfood.framework.web;
 
 
 import _generated_sources_swagger_clientes.NeighborfoodApi;
-import br.com.techchallenge.fiap.neighborfood.core.domain.acompanhamento.Mimo;
+import br.com.techchallenge.fiap.neighborfood.adapter.controllers.Notificacao;
 import br.com.techchallenge.fiap.neighborfood.core.domain.dto.MimoDTO;
 import br.com.techchallenge.fiap.neighborfood.core.domain.dto.MimoRequestDTO;
-import br.com.techchallenge.fiap.neighborfood.core.usecase.clientes.NotificacaoUseCase;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class NotificacaoController implements NeighborfoodApi {
 
-    private NotificacaoUseCase notificacaoUseCase;
+    private Notificacao notificacaoController;
 
     /**
      * POST /neighborfood/painel/cliente : Envia mimo ao último cliente que realizou um pedido
@@ -30,8 +29,6 @@ public class NotificacaoController implements NeighborfoodApi {
 
     @Override
     public ResponseEntity<MimoDTO> sendBonus(MimoRequestDTO mimoRequestDTO) {
-        Mimo mimo = new Mimo();
-        mimo.setIdUsuario(mimoRequestDTO.getIdCliente());
-        return ResponseEntity.ok(notificacaoUseCase.enviaMimos(mimo));
+        return ResponseEntity.ok(notificacaoController.enviaMimos(mimoRequestDTO));
     }
 }

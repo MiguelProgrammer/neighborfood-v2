@@ -17,7 +17,7 @@ public class Produto {
     private BigDecimal preco;
     private Categoria categoria;
     private String descricao;
-    ;
+
     private String img;
 
     public Produto() {
@@ -39,7 +39,7 @@ public class Produto {
         entity.setPreco(this.getPreco());
         entity.setCategoria(this.getCategoria());
         entity.setImg(this.getImg());
-        //entity.setId(this.getId());
+        entity.setId(this.getId());
         return entity;
     }
 

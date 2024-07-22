@@ -92,8 +92,8 @@ public class Pedido {
 
     public PedidoEntity domainFromEntity() {
         PedidoEntity entity = new PedidoEntity();
-        //entity.setId(this.id);
-        //entity.setIdCliente(this.idCliente);
+        entity.setId(this.id);
+        entity.setIdCliente(this.idCliente);
         entity.setStatus(this.status);
         entity.setDataPedido(this.dataPedido);
         entity.setTotal(this.total);
@@ -138,9 +138,9 @@ public class Pedido {
 
     public ItemEntity itemDomainFromItemEntity(Item domain) {
         ItemEntity item = new ItemEntity();
-        //item.setId(domain.getId());
+        item.setId(domain.getId());
         item.setIdPedido(domain.getIdPedido());
-        //item.setIdProduto(domain.getIdProduto());
+        item.setIdProduto(domain.getIdProduto());
         item.setNome(domain.getNome());
         item.setDescricao(domain.getDescricao());
         item.setCategoria(domain.getCategoria());
@@ -187,4 +187,5 @@ public class Pedido {
                 "\nDATA DO PEDIDO = " + dataPedido +
                 "\n\n____________PEDIDO N* " + id + "____________\n\n";
     }
+
 }

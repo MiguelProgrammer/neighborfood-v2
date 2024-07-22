@@ -4,28 +4,28 @@
 
 package br.com.techchallenge.fiap.neighborfood.core.usecase.acompanhamento;
 
-import br.com.techchallenge.fiap.neighborfood.adapter.controllers.AcompanhamentoResponse;
+import br.com.techchallenge.fiap.neighborfood.adapter.gateways.PedidoGateway;
 import br.com.techchallenge.fiap.neighborfood.config.exceptions.PedidoException;
+import br.com.techchallenge.fiap.neighborfood.core.domain.dto.AcompanhamentoResponseDTO;
 import br.com.techchallenge.fiap.neighborfood.core.domain.enums.Status;
 import br.com.techchallenge.fiap.neighborfood.core.domain.pedido.Pedido;
 import br.com.techchallenge.fiap.neighborfood.core.usecase.acompanhamento.acompanhachain.AcompanhamentoChain;
 import br.com.techchallenge.fiap.neighborfood.core.usecase.acompanhamento.acompanhachain.status.anemic.AcompanhamentoChainRecebido;
-import br.com.techchallenge.fiap.neighborfood.infrastructure.gateways.PedidoRepositoryGateway;
+import org.springframework.stereotype.Component;
 
 import java.util.Date;
 
-
+@Component
 public class AcompanhamentoUseCase {
 
-    private final PedidoRepositoryGateway pedidoGateway;
-    private final AcompanhamentoChain statusPedidoChain;
+    private final PedidoGateway pedidoGateway;
+    private AcompanhamentoChain statusPedidoChain;
 
-    public AcompanhamentoUseCase(PedidoRepositoryGateway pedidoGateway, AcompanhamentoChain statusPedidoChain) {
+    public AcompanhamentoUseCase(PedidoGateway pedidoGateway) {
         this.pedidoGateway = pedidoGateway;
-        this.statusPedidoChain = statusPedidoChain;
     }
 
-    public AcompanhamentoResponse getOrderStatus(Long idPedido) {
+    public AcompanhamentoResponseDTO getOrderStatus(Long idPedido) {
 
         Pedido pedido;
         try {

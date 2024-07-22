@@ -4,39 +4,42 @@
 
 package br.com.techchallenge.fiap.neighborfood.core.usecase.clientes;
 
+import br.com.techchallenge.fiap.neighborfood.adapter.gateways.NotificacaoGateway;
+import br.com.techchallenge.fiap.neighborfood.adapter.gateways.UserGateway;
 import br.com.techchallenge.fiap.neighborfood.adapter.presenter.MapperUser;
 import br.com.techchallenge.fiap.neighborfood.core.domain.acompanhamento.Mimo;
 import br.com.techchallenge.fiap.neighborfood.core.domain.acompanhamento.Notificacao;
 import br.com.techchallenge.fiap.neighborfood.core.domain.dto.MimoDTO;
+import br.com.techchallenge.fiap.neighborfood.core.domain.dto.MimoRequestDTO;
 import br.com.techchallenge.fiap.neighborfood.core.domain.usuario.Cliente;
-import br.com.techchallenge.fiap.neighborfood.infrastructure.gateways.NotificacaoRepositoryGateway;
-import br.com.techchallenge.fiap.neighborfood.infrastructure.gateways.UserRepositoryGateway;
+import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Random;
 
+@Component
 public class NotificacaoUseCase {
 
-    private final NotificacaoRepositoryGateway notificacao;
-    private final UserRepositoryGateway userRepositoryGateway;
-    private final MapperUser mapperUser;
+    private final NotificacaoGateway notificacao;
+    private final UserGateway userGateway;
+    private final MapperUser mapperUser = new MapperUser();
 
-    public NotificacaoUseCase(NotificacaoRepositoryGateway notificacao, UserRepositoryGateway userRepositoryGateway, MapperUser mapperUser) {
+    public NotificacaoUseCase(NotificacaoGateway notificacao, UserGateway userGateway) {
         this.notificacao = notificacao;
-        this.userRepositoryGateway = userRepositoryGateway;
-        this.mapperUser = mapperUser;
+        this.userGateway = userGateway;
     }
 
-    public MimoDTO enviaMimos(Mimo mimoRequest) {
+    public MimoDTO enviaMimos(MimoRequestDTO mimoRequest) {
         MimoDTO mimoDTO = new MimoDTO();
-        Cliente cliente = (Cliente) userRepositoryGateway.usuarioById(mimoRequest.getIdUsuario());
+        mimoDTO.setIdCliente(mimoRequest.getIdCliente());
+        Cliente cliente = (Cliente) userGateway.usuarioById(mimoRequest.getIdCliente());
         if (cliente != null) {
             Random gerador = new Random();
-            mimoRequest.setCodigo(Long.valueOf(String.valueOf(gerador.nextInt(26))));
-            mimoRequest.setDescricao("Desconto no próximo pedido. R$ " + new BigDecimal("10.90").setScale(2, RoundingMode.HALF_UP));
-            mimoRequest.setIdUsuario(cliente.getId());
-            Mimo mimo = notificacao.enviaMimos(mimoRequest);
+            mimoDTO.setCodigo(String.valueOf(gerador.nextInt(26)));
+            mimoDTO.setDescricao("Desconto no próximo pedido. R$ " + new BigDecimal("10.90").setScale(2, RoundingMode.HALF_UP));
+            mimoDTO.setIdCliente(cliente.getId());
+            Mimo mimo = notificacao.enviaMimos(mimoDTO);
             mimoDTO.setCodigo(mimo.getCodigo().toString());
             mimoDTO.setDescricao(mimo.getDescricao());
             mimoDTO.setIdCliente(mimo.getIdUsuario());

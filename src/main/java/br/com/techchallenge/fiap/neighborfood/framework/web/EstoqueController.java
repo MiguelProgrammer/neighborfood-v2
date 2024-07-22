@@ -6,21 +6,24 @@ package br.com.techchallenge.fiap.neighborfood.framework.web;
 
 
 import _generated_sources_swagger_estoque.NeighborfoodApi;
-import br.com.techchallenge.fiap.neighborfood.adapter.controllers.AcompanhamentoResponse;
-import br.com.techchallenge.fiap.neighborfood.adapter.gateways.EstoqueGateway;
+import br.com.techchallenge.fiap.neighborfood.adapter.controllers.Estoque;
 import br.com.techchallenge.fiap.neighborfood.core.domain.dto.AcompanhamentoResponseDTO;
 import br.com.techchallenge.fiap.neighborfood.core.usecase.estoque.AdmUseCase;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
 public class EstoqueController implements NeighborfoodApi {
 
-    private EstoqueGateway estoqueGateway;
+    private Estoque estoqueController;
     private AdmUseCase admUseCase;
+
+    public EstoqueController(Estoque estoqueController, AdmUseCase admUseCase) {
+        this.estoqueController = estoqueController;
+        this.admUseCase = admUseCase;
+    }
 
     /**
      * GET /neighborfood/painel/produto/cadastro/{idAdmin} : Cadastra produtos
@@ -34,7 +37,7 @@ public class EstoqueController implements NeighborfoodApi {
 
     @Override
     public ResponseEntity<Object> registerProduct(Long idAdmin) {
-        return ResponseEntity.ok(estoqueGateway.gerenciaEstoque(idAdmin));
+        return ResponseEntity.ok(estoqueController.cadastraProduto(idAdmin));
     }
 
     /**
@@ -48,12 +51,7 @@ public class EstoqueController implements NeighborfoodApi {
      */
     @Override
     public ResponseEntity<List<AcompanhamentoResponseDTO>> listOrders(Long idAdmin) {
-        List<AcompanhamentoResponseDTO> statusDosPedidos = new ArrayList<>();
-        List<AcompanhamentoResponse> acompanhamentoResponses = admUseCase.listaPedidos(idAdmin);
-
-        acompanhamentoResponses.forEach(resp -> {
-            statusDosPedidos.add(resp.pedidoFromResponse());
-        });
-        return ResponseEntity.ok(statusDosPedidos);
+        List<AcompanhamentoResponseDTO> acomResp = estoqueController.listaPedidos(idAdmin);
+        return ResponseEntity.ok(acomResp);
     }
 }

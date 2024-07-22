@@ -4,8 +4,10 @@
 
 package br.com.techchallenge.fiap.neighborfood.infrastructure.gateways;
 
-import br.com.techchallenge.fiap.neighborfood.adapter.controllers.AcompanhamentoResponse;
 import br.com.techchallenge.fiap.neighborfood.adapter.gateways.PedidoGateway;
+import br.com.techchallenge.fiap.neighborfood.adapter.presenter.AcompanhamentoResponse;
+import br.com.techchallenge.fiap.neighborfood.core.domain.dto.AcompanhamentoResponseDTO;
+import br.com.techchallenge.fiap.neighborfood.core.domain.dto.PagamentoDTO;
 import br.com.techchallenge.fiap.neighborfood.core.domain.enums.Categoria;
 import br.com.techchallenge.fiap.neighborfood.core.domain.enums.Status;
 import br.com.techchallenge.fiap.neighborfood.core.domain.pedido.Item;
@@ -49,7 +51,7 @@ public class PedidoRepositoryGateway implements PedidoGateway {
     }
 
     @Override
-    public AcompanhamentoResponse pedido(Pedido pedido) {
+    public AcompanhamentoResponseDTO pedido(Pedido pedido) {
         PedidoEntity entity = new PedidoEntity();
         PedidoEntity updateResponse = new PedidoEntity();
 
@@ -80,18 +82,19 @@ public class PedidoRepositoryGateway implements PedidoGateway {
             });
             updateResponse = pedidoRepository.saveAndFlush(save);
 
-            AcompanhamentoResponse response = new AcompanhamentoResponse().pedidoEntityFromResponse(updateResponse);
+            AcompanhamentoResponseDTO response =
+                    new AcompanhamentoResponse().pedidoEntityFromResponse(updateResponse);
             return response;
         } else {
 
-            AcompanhamentoResponse response = new AcompanhamentoResponse().pedidoEntityFromResponse(pedido.domainFromEntity());
+            AcompanhamentoResponseDTO response = new AcompanhamentoResponse().pedidoEntityFromResponse(pedido.domainFromEntity());
             return response;
 
         }
     }
 
     @Override
-    public AcompanhamentoResponse atualizarPedido(Pedido pedido) {
+    public AcompanhamentoResponseDTO atualizarPedido(Pedido pedido) {
         PedidoEntity updateResponse = pedidoRepository.saveAndFlush(pedido.domainFromEntity());
         return new AcompanhamentoResponse().pedidoEntityFromResponse(updateResponse);
     }
@@ -171,10 +174,10 @@ public class PedidoRepositoryGateway implements PedidoGateway {
 
     @Override
     @Transactional
-    public void salvaPagamento(PagamentoEntity entity) {
+    public void salvaPagamento(PagamentoDTO dto) {
         PagamentoEntity pagamento = new PagamentoEntity();
-        pagamento.setPagou(entity.getPagou());
-        pagamento.setIdPedido(entity.getIdPedido());
+        pagamento.setPagou(dto.getPagou());
+        pagamento.setIdPedido(dto.getIdPedido());
         pagamentoRepository.save(pagamento);
     }
 

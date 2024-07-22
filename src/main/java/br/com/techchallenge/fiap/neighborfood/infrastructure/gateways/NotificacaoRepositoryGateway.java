@@ -4,9 +4,10 @@
 
 package br.com.techchallenge.fiap.neighborfood.infrastructure.gateways;
 
-import br.com.techchallenge.fiap.neighborfood.adapter.gateways.NotificationGateway;
+import br.com.techchallenge.fiap.neighborfood.adapter.gateways.NotificacaoGateway;
 import br.com.techchallenge.fiap.neighborfood.core.domain.acompanhamento.Mimo;
 import br.com.techchallenge.fiap.neighborfood.core.domain.acompanhamento.Notificacao;
+import br.com.techchallenge.fiap.neighborfood.core.domain.dto.MimoDTO;
 import br.com.techchallenge.fiap.neighborfood.infrastructure.persistence.notification.MimoRepository;
 import br.com.techchallenge.fiap.neighborfood.infrastructure.persistence.notification.NotificacaoRepository;
 import br.com.techchallenge.fiap.neighborfood.infrastructure.persistence.notification.entities.MimoEntity;
@@ -18,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class NotificacaoRepositoryGateway implements NotificationGateway {
+public class NotificacaoRepositoryGateway implements NotificacaoGateway {
 
     private final NotificacaoRepository notificacaoRepository;
     private final MimoRepository mimoRepository;
@@ -30,10 +31,10 @@ public class NotificacaoRepositoryGateway implements NotificationGateway {
 
     @Override
     @Transactional
-    public Mimo enviaMimos(Mimo mimoRequest) {
+    public Mimo enviaMimos(MimoDTO mimoRequest) {
         MimoEntity entity = new MimoEntity();
-        entity.setIdUsuario(mimoRequest.getIdUsuario());
-        entity.setCodigo(mimoRequest.getCodigo());
+        entity.setIdUsuario(mimoRequest.getIdCliente());
+        entity.setCodigo(Long.valueOf(mimoRequest.getCodigo()));
         entity.setDescricao(mimoRequest.getDescricao());
         MimoEntity save = mimoRepository.save(entity);
         return new Mimo().fromModel(save);

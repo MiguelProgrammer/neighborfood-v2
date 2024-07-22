@@ -13,11 +13,9 @@ public class AcompanhamentoChainRecebido extends AcompanhamentoChain {
 
     private AcompanhamentoChain statusPedidoChain;
 
-    public AcompanhamentoChainRecebido() {
-    }
-
-    public AcompanhamentoChainRecebido(AcompanhamentoChain statusPedidoChain) {
-        this.statusPedidoChain = statusPedidoChain;
+    public AcompanhamentoChainRecebido(AcompanhamentoChain statusPedidoChain, AcompanhamentoChain statusPedidoChain1) {
+        super(statusPedidoChain);
+        this.statusPedidoChain = statusPedidoChain1;
     }
 
     @Override

@@ -4,34 +4,36 @@
 
 package br.com.techchallenge.fiap.neighborfood.core.usecase.estoque;
 
+import br.com.techchallenge.fiap.neighborfood.adapter.gateways.EstoqueGateway;
+import br.com.techchallenge.fiap.neighborfood.adapter.gateways.UserGateway;
 import br.com.techchallenge.fiap.neighborfood.core.domain.enums.Categoria;
 import br.com.techchallenge.fiap.neighborfood.core.domain.pedido.Produto;
-import br.com.techchallenge.fiap.neighborfood.infrastructure.gateways.EstoqueRepositoryGateway;
-import br.com.techchallenge.fiap.neighborfood.infrastructure.gateways.UserRepositoryGateway;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Set;
 
 @Slf4j
+@Component
 public class EstoqueUseCase {
 
 
-    private final EstoqueRepositoryGateway produtoRepositoryGateway;
-    private final UserRepositoryGateway userRepositoryGateway;
+    private final EstoqueGateway estoqueGateway;
+    private final UserGateway userGateway;
 
-    public EstoqueUseCase(EstoqueRepositoryGateway produtoRepositoryGateway, UserRepositoryGateway userRepositoryGateway) {
-        this.produtoRepositoryGateway = produtoRepositoryGateway;
-        this.userRepositoryGateway = userRepositoryGateway;
+    public EstoqueUseCase(EstoqueGateway estoqueGateway, UserGateway userGateway) {
+        this.estoqueGateway = estoqueGateway;
+        this.userGateway = userGateway;
     }
 
     public Object gerenciaEstoque(Long idAmdin) {
         Set<Produto> listaProdutos = new HashSet<>();
 
-        if (userRepositoryGateway.usuarioById(idAmdin).getId() != null) {
+        if (userGateway.usuarioById(idAmdin).getId() != null) {
 
             /**
              * MOCK PRODUCTS
@@ -83,18 +85,18 @@ public class EstoqueUseCase {
 
 
     public void repoemEstoqueExecute(Set<Produto> produtos) {
-        produtoRepositoryGateway.repoemEstoque(produtos);
+        estoqueGateway.repoemEstoque(produtos);
     }
 
     public Object findById(Long idProduto) {
-        return produtoRepositoryGateway.findById(idProduto);
+        return estoqueGateway.findById(idProduto);
     }
 
     public void deleteById(Long idProduto) {
-        produtoRepositoryGateway.deleteById(idProduto);
+        estoqueGateway.deleteById(idProduto);
     }
 
     public void deleteAllExecute(Set<Produto> produtos) {
-        produtoRepositoryGateway.deleteAll(produtos);
+        estoqueGateway.deleteAll(produtos);
     }
 }

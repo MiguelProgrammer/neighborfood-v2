@@ -6,8 +6,7 @@ package br.com.techchallenge.fiap.neighborfood.framework.web;
 
 
 import _generated_sources_swagger_acompanhamento.NeighborfoodApi;
-import br.com.techchallenge.fiap.neighborfood.adapter.controllers.AcompanhamentoResponse;
-import br.com.techchallenge.fiap.neighborfood.adapter.gateways.AcompanhamentoGateway;
+import br.com.techchallenge.fiap.neighborfood.adapter.controllers.Acompanhamento;
 import br.com.techchallenge.fiap.neighborfood.core.domain.dto.AcompanhamentoResponseDTO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,10 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AcompanhamentoController implements NeighborfoodApi {
 
-    private AcompanhamentoGateway acompanhamentoGateway;
+    private Acompanhamento acompanhamentoController;
 
-    public AcompanhamentoController(AcompanhamentoGateway acompanhamentoGateway) {
-        this.acompanhamentoGateway = acompanhamentoGateway;
+    public AcompanhamentoController(Acompanhamento acompanhamentoController) {
+        this.acompanhamentoController = acompanhamentoController;
     }
 
     /**
@@ -32,8 +31,8 @@ public class AcompanhamentoController implements NeighborfoodApi {
      */
     @Override
     public ResponseEntity<AcompanhamentoResponseDTO> findOrderByIdOrder(Long idPedido) {
-        AcompanhamentoResponse orderStatusExecute = acompanhamentoGateway.getOrderStatus(idPedido);
-        return ResponseEntity.ok(orderStatusExecute.pedidoFromResponse());
+        AcompanhamentoResponseDTO orderStatusExecute = acompanhamentoController.statusDoPedido(idPedido);
+        return ResponseEntity.ok(orderStatusExecute);
     }
 
 }

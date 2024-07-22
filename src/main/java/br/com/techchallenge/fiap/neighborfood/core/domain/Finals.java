@@ -4,6 +4,13 @@ package br.com.techchallenge.fiap.neighborfood.core.domain;/*
 
 public class Finals {
 
+
+    public static final String MESSAGE_ADM_ESTOQUE =
+            "Caro adm, por favor, veja a quantia de itens cadastrado no estoque!";
+    public static final String CLIENTE_NOT_FOUND = "\n\nCliente ou Pedido não encontrado!\n\n";
+    public static final String ITENS_EM_FALLTA = "\n\nItens selecionados em falta!\n\n";
+
+
     public static final String MESSAGE = "\n\nUsuário não encontrado ou não cadastrado!\n" +
             "Por favor, verifique as informações inseridas.";
     public static final String MESSAGE_SUCCESS = "Usuário cadastrado com sucesso!";

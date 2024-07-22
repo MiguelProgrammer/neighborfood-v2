@@ -11,13 +11,8 @@ import static br.com.techchallenge.fiap.neighborfood.core.domain.Finals.MESSAGE_
 
 public class AcompanhamentoChainPronto extends AcompanhamentoChain {
 
-    private AcompanhamentoChain statusPedidoChain;
-
-    public AcompanhamentoChainPronto() {
-    }
-
     public AcompanhamentoChainPronto(AcompanhamentoChain statusPedidoChain) {
-        this.statusPedidoChain = statusPedidoChain;
+        super(statusPedidoChain);
     }
 
     @Override

@@ -9,7 +9,11 @@ import br.com.techchallenge.fiap.neighborfood.core.domain.enums.Status;
 
 public abstract class AcompanhamentoChain {
 
-    private AcompanhamentoChain StatusPedidoChain;
+    private final AcompanhamentoChain StatusPedidoChain;
+
+    public AcompanhamentoChain(AcompanhamentoChain statusPedidoChain) {
+        StatusPedidoChain = statusPedidoChain;
+    }
 
     public abstract String sms(Status status);
 }

@@ -4,23 +4,31 @@
 
 package br.com.techchallenge.fiap.neighborfood.infrastructure.gateways;
 
-import br.com.techchallenge.fiap.neighborfood.adapter.controllers.AcompanhamentoResponse;
-import br.com.techchallenge.fiap.neighborfood.adapter.gateways.PagamentoGteway;
-import br.com.techchallenge.fiap.neighborfood.core.domain.pagamento.Pagamento;
+import br.com.techchallenge.fiap.neighborfood.adapter.gateways.PagamentoGateway;
+import br.com.techchallenge.fiap.neighborfood.adapter.presenter.AcompanhamentoResponse;
+import br.com.techchallenge.fiap.neighborfood.core.domain.dto.AcompanhamentoResponseDTO;
+import br.com.techchallenge.fiap.neighborfood.core.domain.dto.PagamentoDTO;
 import br.com.techchallenge.fiap.neighborfood.infrastructure.persistence.order.PagamentoRepository;
+import br.com.techchallenge.fiap.neighborfood.infrastructure.persistence.order.entities.PagamentoEntity;
 import org.springframework.stereotype.Component;
 
 @Component
-public class PagamentoRepositoryGateway implements PagamentoGteway {
+public class PagamentoRepositoryGateway implements PagamentoGateway {
 
+    private AcompanhamentoResponse mapper;
     private final PagamentoRepository pagamentoRepository;
+    private AcompanhamentoPedidoRepositorioGateway acompanhamentoResponse;
 
     public PagamentoRepositoryGateway(PagamentoRepository pagamentoRepository) {
         this.pagamentoRepository = pagamentoRepository;
     }
 
     @Override
-    public AcompanhamentoResponse pagamento(Pagamento pagamento) {
-        return null;//pagamentoRepository.save(pagamento);
+    public AcompanhamentoResponseDTO pagamento(PagamentoDTO pagamento) {
+        PagamentoEntity entity = new PagamentoEntity();
+        entity.setIdPedido(pagamento.getIdPedido());
+        entity.setPagou(pagamento.getPagou());
+        PagamentoEntity save = pagamentoRepository.save(entity);
+        return acompanhamentoResponse.getOrderStatus(save.getIdPedido());
     }
 }

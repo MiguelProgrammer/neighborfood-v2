@@ -2,7 +2,7 @@
  * Copyright (c) 2024. MiguelProgrammer
  */
 
-package br.com.techchallenge.fiap.neighborfood.adapter.controllers;
+package br.com.techchallenge.fiap.neighborfood.adapter.presenter;
 
 import br.com.techchallenge.fiap.neighborfood.adapter.inbound.PedidoRequest;
 import br.com.techchallenge.fiap.neighborfood.core.domain.dto.*;
@@ -61,29 +61,32 @@ public class AcompanhamentoResponse {
         return response;
     }
 
-    public AcompanhamentoResponse pedidoEntityFromResponse(PedidoEntity pedidoEntity) {
-        AcompanhamentoResponse response = new AcompanhamentoResponse();
-        Set<Item> itensPedido = new HashSet<>();
+    public AcompanhamentoResponseDTO pedidoEntityFromResponse(PedidoEntity pedidoEntity) {
+        AcompanhamentoResponseDTO response = new AcompanhamentoResponseDTO();
+        Set<ItemPedido> itensPedido = new HashSet<>();
         itensPedido.forEach(item -> item.setIdPedido(pedidoEntity.getId()));
-        PedidoRequest request = new PedidoRequest();
+        PedidoRequestDTO request = new PedidoRequestDTO();
         request.setIdCliente(pedidoEntity.getIdCliente());
 
         pedidoEntity.getItensProdutos().forEach(item -> {
-            Item item1 = new Item();
+            ItemPedido item1 = new ItemPedido();
             item1.setId(item.getId());
             item1.setIdPedido(item.getIdPedido());
-            item1.setIdProduto(item.getIdProduto());
-            item1.setNome(item.getNome());
-            item1.setDescricao(item.getDescricao());
-            item1.setCategoria(item.getCategoria());
-            item1.setPreco(item.getPreco());
-            item1.setImg(item.getImg());
+            ProdutoDTO produtoDTO = new ProdutoDTO();
+            produtoDTO.setId(item.getIdProduto());
+            produtoDTO.setNome(item.getNome());
+            produtoDTO.setDescricao(item.getDescricao());
+            produtoDTO.setCategoria(CategoriaDTO.valueOf(String.valueOf(item.getCategoria())));
+            produtoDTO.setPreco(item.getPreco());
+            produtoDTO.setImg(item.getImg());
+            item1.setProduto(produtoDTO);
             itensPedido.add(item1);
         });
-        request.setItensPedido(itensPedido);
-        response.setStatus(pedidoEntity.getStatus());
+        request.setItensPedido(itensPedido.stream().toList());
+        response.setStatus(StatusPedidoDTO.fromValue(String.valueOf(pedidoEntity.getStatus())));
         response.setTotal(pedidoEntity.getTotal());
-        response.convertPedidoRequest(request);
+        //this.convertPedidoRequest(request);
+        response.setPedido(request);
         request.setId(pedidoEntity.getId());
         return response;
     }
@@ -137,6 +140,7 @@ public class AcompanhamentoResponse {
         request.setItensPedido(new HashSet<>(itens));
         return request;
     }
+
 }
 
 

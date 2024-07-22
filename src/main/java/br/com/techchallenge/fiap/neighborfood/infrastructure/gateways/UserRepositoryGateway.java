@@ -20,7 +20,7 @@ public class UserRepositoryGateway implements UserGateway {
 
     private final AdmRepository admRepository;
     private final ClienteRepository clienteRepository;
-    private MapperUser mapperUser;
+    private MapperUser mapperUser = new MapperUser();
 
     public UserRepositoryGateway(AdmRepository admRepository, ClienteRepository clienteRepository) {
         this.admRepository = admRepository;
@@ -49,8 +49,11 @@ public class UserRepositoryGateway implements UserGateway {
     private Usuario getUsuarioPorId(Long idUsuario) {
         Optional<ClienteEntity> cliente = clienteRepository.findById(idUsuario);
         if (cliente.isEmpty()) {
-            Optional<AdminEntity> usuario = admRepository.findById(idUsuario);
-            return mapperUser.fromModel(usuario.get());
+            Optional<AdminEntity> admin = admRepository.findById(idUsuario);
+            if (!admin.isEmpty()) {
+                return mapperUser.fromModel(admin.get());
+            }
+            return new Usuario();
         }
         return mapperUser.fromModel(cliente.get());
     }

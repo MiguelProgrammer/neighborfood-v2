@@ -55,5 +55,4 @@ public class MapperUser {
         this.entityAdmin.setEmail(adminRequest.getEmail());
         return entityAdmin;
     }
-
 }

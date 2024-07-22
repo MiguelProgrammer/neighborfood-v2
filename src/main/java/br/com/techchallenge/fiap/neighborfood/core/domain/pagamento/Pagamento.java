@@ -22,14 +22,6 @@ public class Pagamento {
     }
 
 
-    public PagamentoEntity fromEntity(Pagamento pagamento) {
-        PagamentoEntity entity = new PagamentoEntity();
-        //entity.setId(pagamento.getId());
-        entity.setPagou(pagamento.getPagou());
-        entity.setIdPedido(pagamento.getIdPedido());
-        return entity;
-    }
-
     public Long getId() {
         return id;
     }

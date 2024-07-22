@@ -5,7 +5,7 @@
 package br.com.techchallenge.fiap.neighborfood.framework.web;
 
 import _generated_sources_swagger_acesso.NeighborfoodApi;
-import br.com.techchallenge.fiap.neighborfood.adapter.controllers.Login;
+import br.com.techchallenge.fiap.neighborfood.adapter.controllers.Acesso;
 import br.com.techchallenge.fiap.neighborfood.adapter.inbound.AdminRequest;
 import br.com.techchallenge.fiap.neighborfood.adapter.inbound.ClienteRequest;
 import br.com.techchallenge.fiap.neighborfood.core.domain.dto.AdminRequestDTO;
@@ -16,9 +16,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AcessoController implements NeighborfoodApi {
 
-    private Login acesso;
+    private Acesso acesso;
 
-    public AcessoController(Login acesso) {
+    public AcessoController(Acesso acesso) {
         this.acesso = acesso;
     }
 

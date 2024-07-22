@@ -5,30 +5,33 @@
 package br.com.techchallenge.fiap.neighborfood.core.usecase.pagamento;
 
 
-import br.com.techchallenge.fiap.neighborfood.adapter.controllers.AcompanhamentoResponse;
+import br.com.techchallenge.fiap.neighborfood.adapter.gateways.AcompanhamentoGateway;
+import br.com.techchallenge.fiap.neighborfood.adapter.gateways.PedidoGateway;
+import br.com.techchallenge.fiap.neighborfood.adapter.presenter.AcompanhamentoResponse;
+import br.com.techchallenge.fiap.neighborfood.core.domain.dto.AcompanhamentoResponseDTO;
+import br.com.techchallenge.fiap.neighborfood.core.domain.dto.PagamentoDTO;
 import br.com.techchallenge.fiap.neighborfood.core.domain.enums.Status;
-import br.com.techchallenge.fiap.neighborfood.core.domain.pagamento.Pagamento;
 import br.com.techchallenge.fiap.neighborfood.core.domain.pedido.Pedido;
-import br.com.techchallenge.fiap.neighborfood.infrastructure.gateways.AcompanhamentoPedidoRepositorioGateway;
-import br.com.techchallenge.fiap.neighborfood.infrastructure.gateways.PedidoRepositoryGateway;
+import org.springframework.stereotype.Component;
 
+@Component
 public class PagamentoUseCase {
 
-    private final PedidoRepositoryGateway pedidoRepositoryGateway;
-    private final AcompanhamentoPedidoRepositorioGateway acompanhamentoGateway;
+    private final PedidoGateway pedidoGateway;
+    private final AcompanhamentoGateway acompanhamentoGateway;
 
-    public PagamentoUseCase(PedidoRepositoryGateway pedidoRepositoryGateway, AcompanhamentoPedidoRepositorioGateway acompanhamentoGateway) {
-        this.pedidoRepositoryGateway = pedidoRepositoryGateway;
+    public PagamentoUseCase(PedidoGateway pedidoGateway, AcompanhamentoGateway acompanhamentoGateway) {
+        this.pedidoGateway = pedidoGateway;
         this.acompanhamentoGateway = acompanhamentoGateway;
     }
 
-    public AcompanhamentoResponse pagamento(Pagamento pagamento) {
+    public AcompanhamentoResponseDTO pagamento(PagamentoDTO pagamento) {
 
-        Pedido pedidoDTO = pedidoRepositoryGateway.findById(pagamento.getIdPedido());
+        Pedido pedidoDTO = pedidoGateway.findById(pagamento.getIdPedido());
         AcompanhamentoResponse response = new AcompanhamentoResponse();
         if (pedidoDTO != null) {
 
-            pedidoRepositoryGateway.salvaPagamento(pagamento.fromEntity(pagamento));
+            pedidoGateway.salvaPagamento(pagamento);
 
             System.out.println("Pagamento Aprovado!");
 
@@ -37,15 +40,17 @@ public class PagamentoUseCase {
                 pedidoDTO.setStatus(Status.EM_PREPARACAO);
                 response.setPedidoRequest(
                         response.convertPedidoRequest(
-                                pedidoRepositoryGateway.commitUpdates(pedidoDTO.domainFromEntity())));
+                                pedidoGateway.commitUpdates(pedidoDTO.domainFromEntity())));
                 System.out.println(acompanhamentoGateway.sms(pedidoDTO.getStatus()));
                 response.setStatus(pedidoDTO.getStatus());
                 response.setTotal(pedidoDTO.getTotal());
+
+
 
             } catch (RuntimeException ex) {
                 System.err.println("Erro ao realizar pagamento => Pedido não encontrado!!!");
             }
         }
-        return response;
+        return response.pedidoFromResponse();
     }
 }

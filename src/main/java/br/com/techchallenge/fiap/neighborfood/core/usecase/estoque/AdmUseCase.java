@@ -4,42 +4,45 @@
 
 package br.com.techchallenge.fiap.neighborfood.core.usecase.estoque;
 
-import br.com.techchallenge.fiap.neighborfood.adapter.controllers.AcompanhamentoResponse;
+import br.com.techchallenge.fiap.neighborfood.adapter.gateways.PedidoGateway;
+import br.com.techchallenge.fiap.neighborfood.adapter.gateways.UserGateway;
+import br.com.techchallenge.fiap.neighborfood.config.exceptions.PedidoException;
+import br.com.techchallenge.fiap.neighborfood.core.domain.dto.AcompanhamentoResponseDTO;
 import br.com.techchallenge.fiap.neighborfood.core.domain.enums.Status;
 import br.com.techchallenge.fiap.neighborfood.core.domain.pedido.Pedido;
-import br.com.techchallenge.fiap.neighborfood.infrastructure.gateways.PedidoRepositoryGateway;
-import br.com.techchallenge.fiap.neighborfood.infrastructure.gateways.UserRepositoryGateway;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.ObjectUtils;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
+@Component
 public class AdmUseCase {
 
-    private final PedidoRepositoryGateway pedidoRepositoryGateway;
-    private final UserRepositoryGateway userRepositoryGateway;
+    private final PedidoGateway pedidoGateway;
+    private final UserGateway userGateway;
 
     final String MESSAGE = "\n\nAdmin não encontrado ou não localizado!";
 
-    public AdmUseCase(PedidoRepositoryGateway pedidoRepositoryGateway, UserRepositoryGateway userRepositoryGateway) {
-        this.pedidoRepositoryGateway = pedidoRepositoryGateway;
-        this.userRepositoryGateway = userRepositoryGateway;
+    public AdmUseCase(PedidoGateway pedidoGateway, UserGateway userGateway) {
+        this.pedidoGateway = pedidoGateway;
+        this.userGateway = userGateway;
     }
 
-    public List<AcompanhamentoResponse> listaPedidos(Long idAdmin) {
-        List<AcompanhamentoResponse> listaAcomp = new ArrayList<>();
+    public List<AcompanhamentoResponseDTO> listaPedidos(Long idAdmin) {
+        List<AcompanhamentoResponseDTO> listaAcomp = new ArrayList<>();
 
 
-        if (ObjectUtils.isEmpty(userRepositoryGateway.usuarioById(idAdmin))) {
-            log.info(MESSAGE);
+        if (ObjectUtils.isEmpty(userGateway.usuarioById(idAdmin).getId())) {
+            throw new PedidoException(MESSAGE);
         }
 
         log.info("Listando pedidos ...\n");
         List<Pedido> listaPedidos = new ArrayList<>();
 
-        pedidoRepositoryGateway.pedidos().forEach(pd -> {
+        pedidoGateway.pedidos().forEach(pd -> {
             listaPedidos.add(new Pedido().entityFromDomain(pd));
         });
 
@@ -49,7 +52,7 @@ public class AdmUseCase {
             } else {
                 log.info(pr.toStringAberto());
             }
-            listaAcomp.add(pedidoRepositoryGateway.pedido(pr));
+            listaAcomp.add(pedidoGateway.pedido(pr));
         });
 
         log.info("\nListagem finalizada.");
