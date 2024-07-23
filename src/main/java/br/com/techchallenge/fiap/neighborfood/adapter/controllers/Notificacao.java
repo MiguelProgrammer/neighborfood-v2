@@ -7,8 +7,9 @@ package br.com.techchallenge.fiap.neighborfood.adapter.controllers;
 import br.com.techchallenge.fiap.neighborfood.core.domain.dto.MimoDTO;
 import br.com.techchallenge.fiap.neighborfood.core.domain.dto.MimoRequestDTO;
 import br.com.techchallenge.fiap.neighborfood.core.usecase.clientes.NotificacaoUseCase;
+import org.springframework.stereotype.Component;
 
-
+@Component
 public class Notificacao {
 
     private final NotificacaoUseCase notificacaoUseCase;

@@ -6,8 +6,9 @@ package br.com.techchallenge.fiap.neighborfood.adapter.controllers;
 
 import br.com.techchallenge.fiap.neighborfood.core.domain.dto.AcompanhamentoResponseDTO;
 import br.com.techchallenge.fiap.neighborfood.core.usecase.acompanhamento.AcompanhamentoUseCase;
+import org.springframework.stereotype.Component;
 
-
+@Component
 public class Acompanhamento {
 
     private final AcompanhamentoUseCase acompanhamentoUseCase;

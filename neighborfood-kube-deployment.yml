@@ -1,0 +1,20 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: neighborfood
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: neighborfood-app
+    spec:
+      containers:
+        - name: neighborfood-no
+          image: migprogrammer/neighborfood-clean:v1
+          ports:
+            - containerPort: 80
+  selector:
+    matchLabels:
+      app: neighborfood-app

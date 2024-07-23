@@ -5,48 +5,73 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b98da9cc-1d07-4246-9de1-00a329614987" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/controllers/Acompanhamento.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/controllers/Estoque.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/controllers/Notificacao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/controllers/PagamentoControllerDomain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/controllers/Pedido.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/neighborfood-kube-deployment.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/neighborfood-kube-service.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/controllers/AcompanhamentoResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/presenter/AcompanhamentoResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/controllers/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/controllers/Acesso.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/gateways/AcompanhamentoGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/gateways/AcompanhamentoGateway.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/gateways/AdminGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/gateways/AdminGateway.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/gateways/NotificationGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/gateways/NotificacaoGateway.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/gateways/PagamentoGteway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/gateways/PagamentoGateway.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/gateways/PedidoGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/gateways/PedidoGateway.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/presenter/MapperUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/presenter/MapperUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/config/beans/BeanConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/config/beans/BeanConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/core/domain/Finals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/core/domain/Finals.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/core/domain/pagamento/Pagamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/core/domain/pagamento/Pagamento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/core/domain/pedido/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/core/domain/pedido/Pedido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/core/domain/pedido/Produto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/core/domain/pedido/Produto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/core/usecase/acompanhamento/AcompanhamentoUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/core/usecase/acompanhamento/AcompanhamentoUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/core/usecase/acompanhamento/acompanhachain/AcompanhamentoChain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/core/usecase/acompanhamento/acompanhachain/AcompanhamentoChain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/core/usecase/acompanhamento/acompanhachain/status/anemic/AcompanhamentoChainFinalizado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/core/usecase/acompanhamento/acompanhachain/status/anemic/AcompanhamentoChainFinalizado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/core/usecase/acompanhamento/acompanhachain/status/anemic/AcompanhamentoChainPreparacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/core/usecase/acompanhamento/acompanhachain/status/anemic/AcompanhamentoChainPreparacao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/core/usecase/acompanhamento/acompanhachain/status/anemic/AcompanhamentoChainPronto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/core/usecase/acompanhamento/acompanhachain/status/anemic/AcompanhamentoChainPronto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/controllers/Acesso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/controllers/Acesso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/controllers/Acompanhamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/controllers/Acompanhamento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/controllers/Estoque.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/controllers/Estoque.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/controllers/Notificacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/controllers/Notificacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/controllers/PagamentoControllerDomain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/controllers/PagamentoControllerDomain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/controllers/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/controllers/Pedido.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/core/usecase/acompanhamento/acompanhachain/status/anemic/AcompanhamentoChainRecebido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/core/usecase/acompanhamento/acompanhachain/status/anemic/AcompanhamentoChainRecebido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/core/usecase/clientes/NotificacaoUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/core/usecase/clientes/NotificacaoUseCase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/core/usecase/estoque/AdmUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/core/usecase/estoque/AdmUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/core/usecase/estoque/EstoqueUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/core/usecase/estoque/EstoqueUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/core/usecase/login/LoginUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/core/usecase/login/LoginUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/core/usecase/pagamento/PagamentoUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/core/usecase/pagamento/PagamentoUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/core/usecase/pedido/PedidoUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/core/usecase/pedido/PedidoUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/framework/web/AcessoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/framework/web/AcessoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/framework/web/AcompanhamentoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/framework/web/AcompanhamentoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/framework/web/EstoqueController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/framework/web/EstoqueController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/framework/web/NotificacaoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/framework/web/NotificacaoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/framework/web/PagamentoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/framework/web/PagamentoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/framework/web/PedidoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/framework/web/PedidoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/infrastructure/gateways/AcompanhamentoPedidoRepositorioGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/infrastructure/gateways/AcompanhamentoPedidoRepositorioGateway.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/infrastructure/gateways/NotificacaoRepositoryGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/infrastructure/gateways/NotificacaoRepositoryGateway.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/infrastructure/gateways/PagamentoRepositoryGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/infrastructure/gateways/PagamentoRepositoryGateway.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/infrastructure/gateways/PedidoRepositoryGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/infrastructure/gateways/PedidoRepositoryGateway.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/infrastructure/gateways/UserRepositoryGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/infrastructure/gateways/UserRepositoryGateway.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/api/resource.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-dev.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-prod.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-prod.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/api/resource.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/api/resource_acesso.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/api/resource_acompanhamento.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/api/resource_clientes.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/api/resource_estoque.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/api/resource_pagamento.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/api/resource_pedido.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application-dev.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application-prod.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/banner.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/.openapi-generator-ignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/.openapi-generator/FILES" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/.openapi-generator/VERSION" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/.openapi-generator/resource_acesso.yml-api-acesso.sha256" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/.openapi-generator/resource_acompanhamento.yml-api-acompanhamento.sha256" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/.openapi-generator/resource_clientes.yml-api-clientes.sha256" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/.openapi-generator/resource_estoque.yml-api-estoque.sha256" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/.openapi-generator/resource_pagamento.yml-api-pagamento.sha256" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/.openapi-generator/resource_pedido.yml-api-pedido.sha256" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/_generated_sources_swagger_acesso/ApiUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/_generated_sources_swagger_acesso/NeighborfoodApi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/_generated_sources_swagger_acompanhamento/ApiUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/_generated_sources_swagger_acompanhamento/NeighborfoodApi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/_generated_sources_swagger_clientes/ApiUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/_generated_sources_swagger_clientes/NeighborfoodApi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/_generated_sources_swagger_estoque/ApiUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/_generated_sources_swagger_estoque/NeighborfoodApi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/_generated_sources_swagger_pagamento/ApiUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/_generated_sources_swagger_pagamento/NeighborfoodApi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/_generated_sources_swagger_pedido/ApiUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/_generated_sources_swagger_pedido/NeighborfoodApi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/br/com/techchallenge/fiap/neighborfood/core/domain/dto/AcompanhamentoResponseDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/br/com/techchallenge/fiap/neighborfood/core/domain/dto/AdminRequestDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/br/com/techchallenge/fiap/neighborfood/core/domain/dto/CategoriaDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/br/com/techchallenge/fiap/neighborfood/core/domain/dto/ClienteRequestDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/br/com/techchallenge/fiap/neighborfood/core/domain/dto/ItemPedido.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/br/com/techchallenge/fiap/neighborfood/core/domain/dto/MimoDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/br/com/techchallenge/fiap/neighborfood/core/domain/dto/MimoRequestDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/br/com/techchallenge/fiap/neighborfood/core/domain/dto/PagamentoDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/br/com/techchallenge/fiap/neighborfood/core/domain/dto/PedidoRequestDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/br/com/techchallenge/fiap/neighborfood/core/domain/dto/ProdutoDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/br/com/techchallenge/fiap/neighborfood/core/domain/dto/StatusPedidoDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/neighborfood-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,56 +110,56 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.NeighborfoodAppl.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "true",
-    "Maven.neighborfood [clean,install,-U...].executor": "Debug",
-    "Maven.neighborfood [clean,install,-U].executor": "Run",
-    "Maven.neighborfood [clean,install,-X...].executor": "Debug",
-    "Maven.neighborfood [clean,install,-X].executor": "Run",
-    "Maven.neighborfood [clean,install].executor": "Run",
-    "Maven.neighborfood [package,-DforkCount=0...].executor": "Debug",
-    "Maven.neighborfood [package].executor": "Run",
-    "OpenRewrite.UpgradeSpringBoot_3_2.executor": "Run",
-    "OverrideImplement.generate.javadoc": "true",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.NeighborfoodApplication.executor": "Run",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/MP-Silva/OneDrive/Documentos/Projetos Java/neighborfood-v2/src/main/resources/api",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.3045977",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.NeighborfoodAppl.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
+    &quot;Maven.neighborfood [clean,install,-U...].executor&quot;: &quot;Debug&quot;,
+    &quot;Maven.neighborfood [clean,install,-U].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.neighborfood [clean,install,-X...].executor&quot;: &quot;Debug&quot;,
+    &quot;Maven.neighborfood [clean,install,-X].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.neighborfood [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.neighborfood [package,-DforkCount=0...].executor&quot;: &quot;Debug&quot;,
+    &quot;Maven.neighborfood [package].executor&quot;: &quot;Run&quot;,
+    &quot;OpenRewrite.UpgradeSpringBoot_3_2.executor&quot;: &quot;Run&quot;,
+    &quot;OverrideImplement.generate.javadoc&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.NeighborfoodApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/MP-Silva/OneDrive/Documentos/Projetos Java/neighborfood-v2&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.3045977&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="br.com.techchallenge.fiap.neighborfood.config" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\MP-Silva\OneDrive\Documentos\Projetos Java\neighborfood-v2" />
       <recent name="C:\Users\MP-Silva\OneDrive\Documentos\Projetos Java\neighborfood-v2\src\main\resources\api" />
       <recent name="C:\Users\MP-Silva\OneDrive\Documentos\Projetos Java\neighborfood\src\main\resources" />
       <recent name="C:\Users\Miguel Silva\Documents\Pos\project\neighborfood\src\main\resources" />
       <recent name="C:\Users\Miguel Silva\Documents\Pos\project\neighborfood\src\main\java\br\com\techchallenge\fiap\neighborfood\application\core\models" />
-      <recent name="C:\Users\Miguel Silva\Documents\Pos\project\neighborfood\src\main\java\br\com\techchallenge\fiap\neighborfood\core\adapters" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\MP-Silva\OneDrive\Documentos\Projetos Java\neighborfood-v2\src\main\java\br\com\techchallenge\fiap\neighborfood\config\exception\beans" />
@@ -267,6 +292,7 @@
       <workItem from="1721436342876" duration="28438000" />
       <workItem from="1721497357294" duration="19970000" />
       <workItem from="1721601949880" duration="12792000" />
+      <workItem from="1721686546935" duration="15030000" />
     </task>
     <servers />
   </component>
@@ -464,7 +490,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/core/usecase/estoque/AdmUseCase.java</url>
-          <line>54</line>
+          <line>50</line>
           <option name="timeStamp" value="237" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -474,12 +500,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/core/usecase/estoque/AdmUseCase.java</url>
-          <line>55</line>
+          <line>52</line>
           <option name="timeStamp" value="239" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/core/usecase/estoque/AdmUseCase.java</url>
-          <line>58</line>
+          <line>55</line>
           <option name="timeStamp" value="240" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -499,7 +525,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/controllers/Acesso.java</url>
-          <line>21</line>
+          <line>23</line>
           <option name="timeStamp" value="247" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -529,7 +555,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/controllers/Acesso.java</url>
-          <line>25</line>
+          <line>27</line>
           <option name="timeStamp" value="257" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -639,7 +665,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/controllers/Pedido.java</url>
-          <line>23</line>
+          <line>25</line>
           <option name="timeStamp" value="284" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

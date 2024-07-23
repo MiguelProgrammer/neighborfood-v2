@@ -47,12 +47,9 @@ public class AdmUseCase {
         });
 
         listaPedidos.forEach(pr -> {
-            if (pr.getStatus().equals(Status.FINALIZADO)) {
-                log.info(pr.toString());
-            } else {
-                log.info(pr.toStringAberto());
+            if (!pr.getStatus().equals(Status.FINALIZADO)) {
+                listaAcomp.add(pedidoGateway.pedido(pr));
             }
-            listaAcomp.add(pedidoGateway.pedido(pr));
         });
 
         log.info("\nListagem finalizada.");

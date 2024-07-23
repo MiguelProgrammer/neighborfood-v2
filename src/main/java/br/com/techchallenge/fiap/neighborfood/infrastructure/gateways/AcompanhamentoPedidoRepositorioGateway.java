@@ -17,14 +17,13 @@ import org.springframework.stereotype.Component;
 import java.util.Optional;
 
 @Component
-public class AcompanhamentoPedidoRepositorioGateway extends AcompanhamentoChain
+public class AcompanhamentoPedidoRepositorioGateway
         implements AcompanhamentoGateway {
 
     private PedidoRepository pedidoRepository;
     private AcompanhamentoChain acompanhamentoChain;
 
-    public AcompanhamentoPedidoRepositorioGateway(AcompanhamentoChain statusPedidoChain, PedidoRepository pedidoRepository) {
-        super(statusPedidoChain);
+    public AcompanhamentoPedidoRepositorioGateway(PedidoRepository pedidoRepository) {
         this.pedidoRepository = pedidoRepository;
     }
 

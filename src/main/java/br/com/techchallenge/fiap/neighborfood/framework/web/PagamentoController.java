@@ -17,6 +17,10 @@ public class PagamentoController implements NeighborfoodApi {
 
     private PagamentoControllerDomain pagamento;
 
+    public PagamentoController(PagamentoControllerDomain pagamento) {
+        this.pagamento = pagamento;
+    }
+
     @Override
     public ResponseEntity<AcompanhamentoResponseDTO> payment(PagamentoDTO pagamentoDTO) {
 //        Pagamento pagamento = new Pagamento();

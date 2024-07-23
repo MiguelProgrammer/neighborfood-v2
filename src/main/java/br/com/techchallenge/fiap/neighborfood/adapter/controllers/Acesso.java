@@ -7,7 +7,9 @@ package br.com.techchallenge.fiap.neighborfood.adapter.controllers;
 import br.com.techchallenge.fiap.neighborfood.adapter.inbound.UsuarioRequest;
 import br.com.techchallenge.fiap.neighborfood.core.domain.usuario.Usuario;
 import br.com.techchallenge.fiap.neighborfood.core.usecase.login.LoginUseCase;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Acesso {
 
     private final LoginUseCase loginUseCase;

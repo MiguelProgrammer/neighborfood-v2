@@ -17,6 +17,10 @@ public class NotificacaoController implements NeighborfoodApi {
 
     private Notificacao notificacaoController;
 
+    public NotificacaoController(Notificacao notificacaoController) {
+        this.notificacaoController = notificacaoController;
+    }
+
     /**
      * POST /neighborfood/painel/cliente : Envia mimo ao último cliente que realizou um pedido
      * Envia mimo ao cliente

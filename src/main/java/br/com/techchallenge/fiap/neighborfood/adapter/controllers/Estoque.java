@@ -7,9 +7,11 @@ package br.com.techchallenge.fiap.neighborfood.adapter.controllers;
 import br.com.techchallenge.fiap.neighborfood.core.domain.dto.AcompanhamentoResponseDTO;
 import br.com.techchallenge.fiap.neighborfood.core.usecase.estoque.AdmUseCase;
 import br.com.techchallenge.fiap.neighborfood.core.usecase.estoque.EstoqueUseCase;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class Estoque {
 
     private final EstoqueUseCase estoqueUseCase;
