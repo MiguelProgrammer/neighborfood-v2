@@ -11,10 +11,14 @@ spec:
         app: neighborfood-app
     spec:
       containers:
-        - name: neighborfood-no
-          image: migprogrammer/neighborfood-clean:v1
+        - name: neighborfood-node
+          image: migprogrammer/neighborfood-clean:v13
           ports:
             - containerPort: 80
+        - name: db-node
+          image: postgres:16-alpine
+          ports:
+            - containerPort: 5432
   selector:
     matchLabels:
       app: neighborfood-app

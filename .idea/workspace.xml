@@ -5,25 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b98da9cc-1d07-4246-9de1-00a329614987" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/neighborfood-kube-deployment.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/neighborfood-kube-service.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/controllers/Acesso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/controllers/Acesso.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/controllers/Acompanhamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/controllers/Acompanhamento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/controllers/Estoque.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/controllers/Estoque.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/controllers/Notificacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/controllers/Notificacao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/controllers/PagamentoControllerDomain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/controllers/PagamentoControllerDomain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/controllers/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/adapter/controllers/Pedido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/core/usecase/acompanhamento/acompanhachain/status/anemic/AcompanhamentoChainRecebido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/core/usecase/acompanhamento/acompanhachain/status/anemic/AcompanhamentoChainRecebido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/core/usecase/estoque/AdmUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/core/usecase/estoque/AdmUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/framework/web/NotificacaoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/framework/web/NotificacaoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/framework/web/PagamentoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/framework/web/PagamentoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/infrastructure/gateways/AcompanhamentoPedidoRepositorioGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/techchallenge/fiap/neighborfood/infrastructure/gateways/AcompanhamentoPedidoRepositorioGateway.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/api/resource.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/neighborfood-kube-deployment.yml" beforeDir="false" afterPath="$PROJECT_DIR$/neighborfood-kube-deployment.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neighborfood-kube-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/neighborfood-kube-service.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-dev.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application-prod.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-prod.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/api/resource.yml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/api/resource_acesso.yml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/api/resource_acompanhamento.yml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/api/resource_clientes.yml" beforeDir="false" />
@@ -72,6 +59,7 @@
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/neighborfood-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/neighborfood-1.0.0-SNAPSHOT.jar.original" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,6 +100,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Application.NeighborfoodApp.executor&quot;: &quot;Run&quot;,
     &quot;Application.NeighborfoodAppl.executor&quot;: &quot;Run&quot;,
     &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
     &quot;Maven.neighborfood [clean,install,-U...].executor&quot;: &quot;Debug&quot;,
@@ -121,6 +110,8 @@
     &quot;Maven.neighborfood [clean,install].executor&quot;: &quot;Run&quot;,
     &quot;Maven.neighborfood [package,-DforkCount=0...].executor&quot;: &quot;Debug&quot;,
     &quot;Maven.neighborfood [package].executor&quot;: &quot;Run&quot;,
+    &quot;Notification.DisplayName-DoNotAsk-Database detector&quot;: &quot;Database detector&quot;,
+    &quot;Notification.DoNotAsk-Database detector&quot;: &quot;true&quot;,
     &quot;OpenRewrite.UpgradeSpringBoot_3_2.executor&quot;: &quot;Run&quot;,
     &quot;OverrideImplement.generate.javadoc&quot;: &quot;true&quot;,
     &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
@@ -179,8 +170,8 @@
       <recent name="br.com.techchallenge.fiap.neighborfood.adapters.inbound.request" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.NeighborfoodAppl">
-    <configuration name="NeighborfoodAppl" type="Application" factoryName="Application">
+  <component name="RunManager" selected="Application.NeighborfoodApp">
+    <configuration name="NeighborfoodApp" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="br.com.techchallenge.fiap.neighborfood.NeighborfoodApplication" />
       <module name="neighborfood" />
       <extension name="net.ashald.envfile">
@@ -213,7 +204,7 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.NeighborfoodAppl" />
+      <item itemvalue="Application.NeighborfoodApp" />
       <item itemvalue="OpenRewrite.UpgradeSpringBoot_3_2" />
       <item itemvalue="Spring Boot.NeighborfoodApplication" />
     </list>
@@ -292,7 +283,18 @@
       <workItem from="1721436342876" duration="28438000" />
       <workItem from="1721497357294" duration="19970000" />
       <workItem from="1721601949880" duration="12792000" />
-      <workItem from="1721686546935" duration="15030000" />
+      <workItem from="1721686546935" duration="15717000" />
+      <workItem from="1721703609926" duration="5033000" />
+      <workItem from="1721780809724" duration="518000" />
+      <workItem from="1721782834853" duration="3213000" />
+      <workItem from="1721860963573" duration="4116000" />
+      <workItem from="1721867660111" duration="3300000" />
+      <workItem from="1721951810271" duration="2169000" />
+      <workItem from="1721954687878" duration="338000" />
+      <workItem from="1721955422158" duration="952000" />
+      <workItem from="1721956818876" duration="7177000" />
+      <workItem from="1722033765023" duration="3747000" />
+      <workItem from="1722082819741" duration="2371000" />
     </task>
     <servers />
   </component>

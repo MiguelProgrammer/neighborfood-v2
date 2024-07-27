@@ -19,7 +19,7 @@ import jakarta.annotation.Generated;
  * ItemPedido
  */
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-07-22T23:05:00.846851700-03:00[GMT-03:00]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-07-26T20:05:13.510642-03:00[GMT-03:00]")
 public class ItemPedido {
 
   private Long id;

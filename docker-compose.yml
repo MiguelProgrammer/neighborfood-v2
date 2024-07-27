@@ -16,30 +16,20 @@ services:
       retries: 5
 
   app:
-    image: migprogrammer/neighborfood-clean:v3
+    image: migprogrammer/neighborfood-clean:v13
     container_name: neighborfood-app
     ports:
-      - "82:82"
+      - "80:80"
     env_file: ./env/app.env
     depends_on:
       db:
         condition: service_healthy
     restart: unless-stopped
     healthcheck:
-      test: curl -v http://app:82/neighborfood/menu
+      test: curl -v http://app:80/neighborfood/menu
       interval: 5s
       timeout: 5s
       retries: 5
 
-  nginx:
-    image: nginx:stable-alpine
-    ports:
-      - "80:80"
-    volumes:
-      - ./nginx:/etc/nginx/conf.d
-    depends_on:
-      - app
-    restart: unless-stopped
-
 volumes:
-  postgresql_data:
+  postgresql_data: {}

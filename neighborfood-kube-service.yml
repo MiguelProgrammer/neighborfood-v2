@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: neighborfood
+  name: food-service
 spec:
   type: ClusterIP
   ports:
     - protocol: "TCP"
-      port: 8080
-      targetPort: 8080
+      port: 8282
+      targetPort: 8282
   selector:
     app: neighborfood-app
