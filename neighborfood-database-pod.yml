@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: database-neighborfood
+  labels:
+    app: database-service
+spec:
+  containers:
+    - name: container-database-neighborfood
+      image: postgres:16-alpine
+      ports:
+        - containerPort: 5432
+      envFrom:
+        - configMapRef:
+            name: database-neighborfood-configmap
