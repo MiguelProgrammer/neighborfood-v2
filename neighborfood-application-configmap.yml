@@ -7,3 +7,4 @@ data:
   SPRING_DATA_SOURCE_URL: jdbc:postgresql://database-neighborfood:5432/food
   SPRING_DATA_SOURCE_USERNAME: postgres
   SPRING_DATA_SOURCE_PASSWORD: postgresql
+  SPRING_JPA_HIBERNATE_DDL_AUTO: create-drop

@@ -3,8 +3,9 @@ kind: Service
 metadata:
   name: database-neighborfood
 spec:
-  type: ClusterIP
+  type: NodePort
   ports:
     - port: 5432
+      nodePort: 30001
   selector:
     app: database-service
