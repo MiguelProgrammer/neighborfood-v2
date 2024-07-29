@@ -19,6 +19,7 @@ Clean architecture also says a lot about not dirtying or violating the layers. T
 * Doc DDD miro: <a href="https://miro.com/app/board/uXjVKUqbA08=/?share_link_id=950297951149">miro</a>
 * Json doc to postman requests: <a href="https://drive.google.com/file/d/1wmFFVwIq0Uxm53vhaXbE4U04BwZxrmTy/view?usp=sharing">request postman</a>
 * Api-docs Swagger OpenPI <a href="http://localhost:8090/swagger-ui/index.html">swagger-ui</a> -> Access documentation only by running the application or by inserting the contents of the src/main/resources/api/resource.yml file on the swagger web editor website
+* Video YouTube <a href="https://www.youtube.com/watch?v=GqULSTVhM8Y">Application Neighborfood demonstration video</a>
 
 <hr>
 
