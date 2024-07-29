@@ -41,6 +41,12 @@ Clean architecture also says a lot about not dirtying or violating the layers. T
 </table>
 
 <hr>
+
+* To execute the project and orchestrate containers, install minikube, the platform used in development and testing.
+* Run the minikube start command to access the minikube dashboard, where you can view the containers in a more simplified way.
+* With docker-desktop installed, enable the kubernetes engine in docker settings.
+* Using the command line via cmd, navigate to the k8s project directory and run the commands kubectl apply -f filename so that applications can upload containers, pods and services.
+* Using the command line, cmd, run the command minikube service app-neighborfood-service, this way you will have access to the api document, swagger-openapi
 <b>Orchestrating containers with minikube, spinning up two instances</b>
 <img src="https://i.imgur.com/mBdqY67.png" width=800>
 <hr>
