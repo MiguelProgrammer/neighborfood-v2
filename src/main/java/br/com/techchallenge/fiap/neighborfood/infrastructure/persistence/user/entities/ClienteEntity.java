@@ -21,7 +21,7 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "cliente")
-@SequenceGenerator(name = "cliente_sequence", initialValue = 1)
+@SequenceGenerator(name = "cliente_sequence")
 public class ClienteEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;

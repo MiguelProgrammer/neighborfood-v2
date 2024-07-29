@@ -37,7 +37,9 @@ public class LoginUseCase {
 
     public Usuario cadastro(UsuarioRequest request) {
         cadastrado(request);
+        if(this.usuario.getId() == null){
         verificarSessao(accessGateway.cadastro(request));
+        }
         return this.usuario;
     }
 

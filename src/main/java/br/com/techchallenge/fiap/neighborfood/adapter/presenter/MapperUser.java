@@ -29,6 +29,7 @@ public class MapperUser {
     }
 
     public ClienteEntity fromEntity(Cliente clienteRequest) {
+        this.entityCliente.setId(null);
         this.entityCliente.setNome(clienteRequest.getNome());
         this.entityCliente.setCpf(clienteRequest.getCpf());
         this.entityCliente.setEmail(clienteRequest.getEmail());
