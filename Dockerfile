@@ -4,4 +4,4 @@ RUN mkdir /app
 WORKDIR /app
 COPY target/*.jar /app/neighborfood-v2.jar
 EXPOSE 80
-ENTRYPOINT ["java", "-jar", "/app/neighborfood.-v2.jar"]
+ENTRYPOINT ["java", "-jar", "/app/neighborfood-v2.jar"]

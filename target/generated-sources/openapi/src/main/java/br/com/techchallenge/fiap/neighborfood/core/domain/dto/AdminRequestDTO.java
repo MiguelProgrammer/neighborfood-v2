@@ -18,7 +18,7 @@ import jakarta.annotation.Generated;
  * AdminRequestDTO
  */
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-07-28T22:08:58.257789100-03:00[America/Sao_Paulo]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-07-28T23:51:16.129297900-03:00[America/Sao_Paulo]")
 public class AdminRequestDTO {
 
   private String nome;

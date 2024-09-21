@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * Gets or Sets StatusPedidoDTO
  */
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-07-28T22:08:59.602208800-03:00[America/Sao_Paulo]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-07-28T23:51:17.291228800-03:00[America/Sao_Paulo]")
 public enum StatusPedidoDTO {
   
   RECEBIDO("RECEBIDO"),
