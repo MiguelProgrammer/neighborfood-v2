@@ -32,7 +32,6 @@ public class AcessoController implements NeighborfoodApi {
      */
     @Override
     public ResponseEntity<Object> login(ClienteRequestDTO clienteRequestDTO) {
-        System.out.println(clienteRequestDTO.toString());
         return ResponseEntity.ok(
                 acesso.login(new ClienteRequest().dtoFromDomain(clienteRequestDTO)));
     }

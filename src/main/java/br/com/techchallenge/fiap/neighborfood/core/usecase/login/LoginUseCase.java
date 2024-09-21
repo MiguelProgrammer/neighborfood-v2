@@ -29,7 +29,6 @@ public class LoginUseCase {
 
     public Usuario login(UsuarioRequest request) {
         this.usuario = accessGateway.login(request);
-        log.info(String.valueOf(request));
         if (this.usuario.getId() == null) {
             log.info(Finals.MESSAGE);
         }
