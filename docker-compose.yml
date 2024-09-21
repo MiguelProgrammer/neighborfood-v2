@@ -16,7 +16,7 @@ services:
       retries: 5
 
   app:
-    image: migprogrammer/neighborfood-clean:v20
+    image: migprogrammer/neighborfood-clean:v30
     container_name: neighborfood-app
     ports:
       - "80:80"
