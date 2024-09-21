@@ -17,8 +17,9 @@ I will refactor the previous architecture to a clean architecture.
 Clean architecture also says a lot about not dirtying or violating the layers. This architecture is based on using the outermost layer to the innermost ones. To do this, the use of appropriate layers must be followed in order to not harm the proposal brought by the adopted model.
 
 * Doc DDD miro: <a href="https://miro.com/app/board/uXjVKUqbA08=/?share_link_id=950297951149">miro</a>
-* Json doc to postman requests: <a href="https://drive.google.com/file/d/1GfCgxuSvyfNFsuZa6ZJAr42No8sQolPO/view?usp=sharing">request postman</a>
+* Json doc to postman requests: <a href="https://drive.google.com/file/d/1wmFFVwIq0Uxm53vhaXbE4U04BwZxrmTy/view?usp=sharing">request postman</a>
 * Api-docs Swagger OpenPI <a href="http://localhost:8090/swagger-ui/index.html">swagger-ui</a> -> Access documentation only by running the application or by inserting the contents of the src/main/resources/api/resource.yml file on the swagger web editor website
+* Video YouTube <a href="https://www.youtube.com/watch?v=GqULSTVhM8Y">Application Neighborfood demonstration video</a>
 
 <hr>
 
@@ -41,6 +42,12 @@ Clean architecture also says a lot about not dirtying or violating the layers. T
 </table>
 
 <hr>
+
+* To execute the project and orchestrate containers, install minikube, the platform used in development and testing.
+* Run the minikube start command to access the minikube dashboard, where you can view the containers in a more simplified way.
+* With docker-desktop installed, enable the kubernetes engine in docker settings.
+* Using the command line via cmd, navigate to the k8s project directory and run the commands kubectl apply -f filename so that applications can upload containers, pods and services.
+* Using the command line, cmd, run the command minikube service app-neighborfood-service, this way you will have access to the api document, swagger-openapi
 <b>Orchestrating containers with minikube, spinning up two instances</b>
 <img src="https://i.imgur.com/mBdqY67.png" width=800>
 <hr>
