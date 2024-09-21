@@ -1,10 +1,7 @@
 # Compiled class file
 *.class
-
-!env
-/env/
-/env
-
+aws/
+aws
 app-key2.pem
 
 # Log file
