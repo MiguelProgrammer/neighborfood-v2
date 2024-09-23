@@ -22,8 +22,8 @@ jobs:
       - uses: action/checkout@v3
       - uses: action/setup-java@v3
         with:
-          java-version: '17'
-          distribuition: '17-jdk-alpine'
+          java-version: '11'
+          distribuition: 'adopt'
           package: '*.jar'
       - name: Publish package
         run: mvn --batch-mode deploy
