@@ -22,8 +22,8 @@ jobs:
       - uses: action/checkout@v4
       - uses: action/setup-java@v4
         with:
-          java-version: '17'
-          distribuition: '17-jdk-alpine'
+          distribution: 'temurin' # See 'Supported distributions' for available options
+          java-version: '21'
           package: '*.jar'
       - name: Publish package
         run: mvn --batch-mode deploy
