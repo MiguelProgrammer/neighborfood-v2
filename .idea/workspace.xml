@@ -5,60 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b98da9cc-1d07-4246-9de1-00a329614987" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.github/workflows/pipeline.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/neighborfood-application-deployment.yml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/neighborfood-application-deployment.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/neighborfood-application-pod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/neighborfood-application-pod.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-dev.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/api/resource_acesso.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/api/resource_acompanhamento.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/api/resource_clientes.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/api/resource_estoque.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/api/resource_pagamento.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/api/resource_pedido.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application-dev.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application-prod.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/banner.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/.openapi-generator-ignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/.openapi-generator/FILES" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/.openapi-generator/VERSION" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/.openapi-generator/resource_acesso.yml-api-acesso.sha256" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/.openapi-generator/resource_acompanhamento.yml-api-acompanhamento.sha256" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/.openapi-generator/resource_clientes.yml-api-clientes.sha256" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/.openapi-generator/resource_estoque.yml-api-estoque.sha256" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/.openapi-generator/resource_pagamento.yml-api-pagamento.sha256" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/.openapi-generator/resource_pedido.yml-api-pedido.sha256" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/_generated_sources_swagger_acesso/ApiUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/_generated_sources_swagger_acesso/NeighborfoodApi.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/_generated_sources_swagger_acompanhamento/ApiUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/_generated_sources_swagger_acompanhamento/NeighborfoodApi.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/_generated_sources_swagger_clientes/ApiUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/_generated_sources_swagger_clientes/NeighborfoodApi.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/_generated_sources_swagger_estoque/ApiUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/_generated_sources_swagger_estoque/NeighborfoodApi.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/_generated_sources_swagger_pagamento/ApiUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/_generated_sources_swagger_pagamento/NeighborfoodApi.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/_generated_sources_swagger_pedido/ApiUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/_generated_sources_swagger_pedido/NeighborfoodApi.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/br/com/techchallenge/fiap/neighborfood/core/domain/dto/AcompanhamentoResponseDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/br/com/techchallenge/fiap/neighborfood/core/domain/dto/AdminRequestDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/br/com/techchallenge/fiap/neighborfood/core/domain/dto/CategoriaDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/br/com/techchallenge/fiap/neighborfood/core/domain/dto/ClienteRequestDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/br/com/techchallenge/fiap/neighborfood/core/domain/dto/ItemPedido.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/br/com/techchallenge/fiap/neighborfood/core/domain/dto/MimoDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/br/com/techchallenge/fiap/neighborfood/core/domain/dto/MimoRequestDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/br/com/techchallenge/fiap/neighborfood/core/domain/dto/PagamentoDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/br/com/techchallenge/fiap/neighborfood/core/domain/dto/PedidoRequestDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/br/com/techchallenge/fiap/neighborfood/core/domain/dto/ProdutoDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/br/com/techchallenge/fiap/neighborfood/core/domain/dto/StatusPedidoDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/neighborfood-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aws/key-par-food.pem" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +29,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/aws/apikey.pem" root0="SKIP_INSPECTION" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
@@ -129,7 +81,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Miguel Silva/Documents/Pos/fase2/neighborfood-v2",
+    "last_opened_file_path": "C:/Users/Miguel Silva/Documents/Pos/fase2/neighborfood-v2/.github/workflows",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -148,18 +100,18 @@
       <recent name="br.com.techchallenge.fiap.neighborfood.config" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Miguel Silva\Documents\Pos\fase2\neighborfood-v2\.github\workflows" />
+      <recent name="C:\Users\Miguel Silva\Documents\Pos\fase2\neighborfood-v2\aws" />
       <recent name="C:\Users\Miguel Silva\Documents\Pos\fase2\neighborfood-v2\doc" />
       <recent name="C:\Users\Miguel Silva\Documents\Pos\fase2\neighborfood-v2" />
       <recent name="C:\Users\Miguel Silva\Documents\Pos\fase2\neighborfood-v2\env" />
-      <recent name="C:\Users\MP-Silva\OneDrive\Documentos\Projetos Java\neighborfood-v2" />
-      <recent name="C:\Users\MP-Silva\OneDrive\Documentos\Projetos Java\neighborfood-v2\src\main\resources\api" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Miguel Silva\Documents\Pos\fase2\neighborfood-v2\aws" />
       <recent name="C:\Users\MP-Silva\OneDrive\Documentos\Projetos Java\neighborfood-v2\uml" />
       <recent name="C:\Users\MP-Silva\OneDrive\Documentos\Projetos Java\neighborfood-v2\k8s" />
       <recent name="C:\Users\MP-Silva\OneDrive\Documentos\Projetos Java\neighborfood-v2\src\main\java\br\com\techchallenge\fiap\neighborfood\config\exception\beans" />
       <recent name="C:\Users\MP-Silva\OneDrive\Documentos\Projetos Java\neighborfood\src\main\resources" />
-      <recent name="C:\Users\MP-Silva\OneDrive\Documentos\Projetos Java\neighborfood" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="br.com.techchallenge.fiap.neighborfood" />
