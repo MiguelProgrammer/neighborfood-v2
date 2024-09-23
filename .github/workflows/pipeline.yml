@@ -1,4 +1,4 @@
-name: Java CI
+name: Java CI with Maven
 
 on:
   push:
@@ -23,12 +23,8 @@ jobs:
         java-version: '17'
         distribution: 'adopt'
 
-    - name: Build with Gradle
-      run: ./gradlew build
-      # Uncomment the following line if you're using Maven
-      # run: mvn clean install
+    - name: Build with Maven
+      run: mvn clean install
 
     - name: Run tests
-      run: ./gradlew test
-      # Uncomment the following line if you're using Maven
-      # run: mvn test
+      run: mvn test
