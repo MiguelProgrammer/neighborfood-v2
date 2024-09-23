@@ -6,7 +6,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
       with:
         fetch-depth: 0
     - name: Package
@@ -19,11 +19,11 @@ jobs:
       contents: read
       packages: write
     steps:
-      - uses: action/checkout@v3
-      - uses: action/setup-java@v3
+      - uses: action/checkout@v4
+      - uses: action/setup-java@v4
         with:
-          java-version: '11'
-          distribuition: 'adopt'
+          java-version: '17'
+          distribuition: '17-jdk-alpine'
           package: '*.jar'
       - name: Publish package
         run: mvn --batch-mode deploy
