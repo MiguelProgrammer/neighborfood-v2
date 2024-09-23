@@ -19,8 +19,12 @@ jobs:
       contents: read
       packages: write
     steps:
-      - uses: action/checkout@v4
-      - uses: action/setup-java@v4
+      - uses: action/checkout@v3
+      - uses: action/setup-java@v3
+        with: 
+          java-version: '17'
+          distribution: 'adopt'
+          package: '*.jar'
       - name: Publish package
         run: mvn --batch-mode deploy
         env:
