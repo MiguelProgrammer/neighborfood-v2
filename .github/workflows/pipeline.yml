@@ -19,11 +19,10 @@ jobs:
       contents: read
       packages: write
     steps:
-      - uses: action/checkout@v4
+      - uses: action/checkout@v1
       - uses: action/setup-java@v4
-        with:
-          distribution: 'temurin' # See 'Supported distributions' for available options
-          java-version: '21'
+        with: 
+          java-version: '17'
           package: '*.jar'
       - name: Publish package
         run: mvn --batch-mode deploy
