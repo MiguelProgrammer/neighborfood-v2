@@ -43,7 +43,11 @@ jobs:
           java-version: '17'
           distribution: 'adopt'
 
-      - name: Publish to Maven Repository
-        run: mvn deploy --settings .github/maven-settings.xml
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build the Docker image
+        run: docker build -t migprogrammer/neighborfood-clean:latest .
+
+      - name: Log into Docker Hub
+        run: docker login -u migprogrammer -p ${{secrets.DOCKERHUB_TOKEN}}
+
+      - name: Push image to Docker Hub
+        run: docker push migprogrammer/neighborfood-clean:latest
