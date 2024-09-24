@@ -32,7 +32,7 @@ import java.util.Map;
 import java.util.Optional;
 import jakarta.annotation.Generated;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-09-22T23:46:35.648894600-03:00[America/Sao_Paulo]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-09-24T07:24:27.501799300-03:00[America/Sao_Paulo]")
 @Validated
 @Tag(name = "orders", description = "Lista os pedidos")
 public interface NeighborfoodApi {

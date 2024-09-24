@@ -18,7 +18,7 @@ import jakarta.annotation.Generated;
  * PagamentoDTO
  */
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-09-22T23:46:36.156906500-03:00[America/Sao_Paulo]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-09-24T07:24:28.228674100-03:00[America/Sao_Paulo]")
 public class PagamentoDTO {
 
   private Long idPedido;
