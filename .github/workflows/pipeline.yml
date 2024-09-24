@@ -37,7 +37,7 @@ jobs:
           echo "JaCoCo report generated at: coverage/index.html"
 
       - name: Upload JaCoCo report
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: jacoco-report
           path: coverage
