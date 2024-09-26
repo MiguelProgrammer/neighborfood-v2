@@ -2,8 +2,6 @@
 *.class
 aws/
 aws
-app-key2.pem
-
 # Log file
 *.log
 
