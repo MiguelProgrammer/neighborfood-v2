@@ -21,7 +21,7 @@ import jakarta.annotation.Generated;
  * AcompanhamentoResponseDTO
  */
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-09-29T10:48:44.297379400-03:00[America/Sao_Paulo]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-09-29T12:19:47.714581600-03:00[America/Sao_Paulo]")
 public class AcompanhamentoResponseDTO {
 
   private PedidoRequestDTO pedido;

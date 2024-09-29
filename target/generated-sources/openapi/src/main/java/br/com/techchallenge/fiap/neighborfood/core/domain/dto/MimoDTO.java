@@ -18,7 +18,7 @@ import jakarta.annotation.Generated;
  * MimoDTO
  */
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-09-29T10:48:41.712220400-03:00[America/Sao_Paulo]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-09-29T12:19:45.766273100-03:00[America/Sao_Paulo]")
 public class MimoDTO {
 
   private String codigo;
