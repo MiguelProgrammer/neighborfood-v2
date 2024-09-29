@@ -8,6 +8,9 @@ jobs:
     name: Deploy to EC2
     runs-on: ubuntu-latest
     steps:
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2
+
       - name: Checkout the files
         uses: actions/checkout@v3
 
