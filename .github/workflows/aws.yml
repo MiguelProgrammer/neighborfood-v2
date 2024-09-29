@@ -2,7 +2,7 @@ name: Push-to-EC2
 on:
   push:
     branches:
-      - main
+      - developer
 jobs:
   deploy:
     name: Deploy to EC2
@@ -19,3 +19,6 @@ jobs:
           REMOTE_HOST: ${{secrets.REMOTE_HOST}}
           REMOTE_USER: ${{secrets.REMOTE_USER}}
           TARGET: ${{secrets.TARGET_DIR}}
+
+
+
