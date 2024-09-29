@@ -1,4 +1,4 @@
-name: Push-to-EC2
+name: Publica ec2
 on:
   push:
     branches:
