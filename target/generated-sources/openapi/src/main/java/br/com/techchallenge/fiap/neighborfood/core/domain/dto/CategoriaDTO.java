@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * Gets or Sets CategoriaDTO
  */
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-09-24T07:24:28.899508400-03:00[America/Sao_Paulo]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-09-29T12:19:47.714581600-03:00[America/Sao_Paulo]")
 public enum CategoriaDTO {
   
   LANCHE("LANCHE"),

@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b98da9cc-1d07-4246-9de1-00a329614987" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/aws.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/aws.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-dev.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application-dev.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +50,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;Application.NeighborfoodApp.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.NeighborfoodApp.executor&quot;: &quot;Run&quot;,
     &quot;Application.NeighborfoodAppl.executor&quot;: &quot;Run&quot;,
     &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
     &quot;JavaScript Debug.index.html.executor&quot;: &quot;Run&quot;,
@@ -82,7 +80,7 @@
     &quot;git-widget-placeholder&quot;: &quot;developer&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Miguel Silva/Documents/Pos/fase2/neighborfood-v2/.github/workflows&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Miguel Silva/Documents/Pos/fase2/neighborfood-v2/aws&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -101,8 +99,8 @@
       <recent name="br.com.techchallenge.fiap.neighborfood.config" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Miguel Silva\Documents\Pos\fase2\neighborfood-v2\.github\workflows" />
       <recent name="C:\Users\Miguel Silva\Documents\Pos\fase2\neighborfood-v2\aws" />
+      <recent name="C:\Users\Miguel Silva\Documents\Pos\fase2\neighborfood-v2\.github\workflows" />
       <recent name="C:\Users\Miguel Silva\Documents\Pos\fase2\neighborfood-v2\doc" />
       <recent name="C:\Users\Miguel Silva\Documents\Pos\fase2\neighborfood-v2" />
       <recent name="C:\Users\Miguel Silva\Documents\Pos\fase2\neighborfood-v2\env" />
