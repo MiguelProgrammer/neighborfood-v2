@@ -10,11 +10,11 @@ import br.com.techchallenge.fiap.neighborfood.core.usecase.pagamento.PagamentoUs
 import org.springframework.stereotype.Component;
 
 @Component
-public class PagamentoControllerDomain {
+public class Pagamento {
 
     private final PagamentoUseCase pagamentoUseCase;
 
-    public PagamentoControllerDomain(PagamentoUseCase pagamentoUseCase) {
+    public Pagamento(PagamentoUseCase pagamentoUseCase) {
         this.pagamentoUseCase = pagamentoUseCase;
     }
 

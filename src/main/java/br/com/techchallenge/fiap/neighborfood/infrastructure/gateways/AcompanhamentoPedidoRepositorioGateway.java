@@ -4,8 +4,8 @@
 
 package br.com.techchallenge.fiap.neighborfood.infrastructure.gateways;
 
-import br.com.techchallenge.fiap.neighborfood.adapter.presenter.AcompanhamentoResponse;
 import br.com.techchallenge.fiap.neighborfood.adapter.gateways.AcompanhamentoGateway;
+import br.com.techchallenge.fiap.neighborfood.adapter.presenter.AcompanhamentoResponse;
 import br.com.techchallenge.fiap.neighborfood.core.domain.dto.AcompanhamentoResponseDTO;
 import br.com.techchallenge.fiap.neighborfood.core.domain.enums.Status;
 import br.com.techchallenge.fiap.neighborfood.core.usecase.acompanhamento.acompanhachain.AcompanhamentoChain;

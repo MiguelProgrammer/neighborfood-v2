@@ -38,11 +38,9 @@ public class BeanConfig {
 
     @Bean
     public PedidoUseCase configBeanPedido(PedidoGateway pedidoGateway, EstoqueGateway produtoGateway,
-                                          NotificacaoGateway notificacaoGateway,
                                           AcompanhamentoGateway acompanhamentoGateway,
                                           UserGateway userGateway) {
-        return new PedidoUseCase(pedidoGateway,produtoGateway,
-                notificacaoGateway, acompanhamentoGateway,
+        return new PedidoUseCase(pedidoGateway,produtoGateway, acompanhamentoGateway,
                 userGateway);
     }
 

@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>br.com.techchallenge.fiap</groupId>
-    <artifactId>neighborfood</artifactId>
+    <artifactId>neighborfood-pagamento</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>neighborfood</name>
-    <description>neighborfood</description>
+    <name>neighborfood-pagamento</name>
+    <description>neighborfood-pagamento</description>
     <properties>
         <maven.compiler.release>17</maven.compiler.release>
     </properties>
@@ -21,6 +21,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <version>3.2.5</version>
         </dependency>
 
         <dependency>
@@ -137,30 +138,7 @@
                             </typeMappings>
                         </configuration>
                     </execution>-->
-                    <execution>
-                        <id>api-clientes</id>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                            <configuration>
-                                <inputSpec>
-                                ${project.basedir}/src/main/resources/api/resource_clientes.yml
-                            </inputSpec>
-                            <generatorName>spring</generatorName>
-                            <modelPackage>br.com.techchallenge.fiap.neighborfood.core.domain.dto</modelPackage>
-                            <apiPackage>$generated-sources/swagger/clientes</apiPackage>
-                            <configOptions>
-                                <sourceFolder>src/main/java/</sourceFolder>
-                                <delegatePattern>false</delegatePattern>
-                                <interfaceOnly>true</interfaceOnly>
-                                <useJakartaEe>true</useJakartaEe>
-                                <validateSpec>true</validateSpec>
-                            </configOptions>
-                            <typeMappings>
-                                <typeMapping>Double=java.math.BigDecimal</typeMapping>
-                            </typeMappings>
-                        </configuration>
-                    </execution>
+
                     <execution>
                         <id>api-estoque</id>
                         <goals>
@@ -284,10 +262,10 @@
 
                 </executions>
             </plugin>
-            <plugin>
+            <!-- <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.8</version> <!-- Use the latest version available -->
+                <version>0.8.8</version>  Use the latest version available -
                 <executions>
                     <execution>
                         <goals>
@@ -303,6 +281,7 @@
                     </execution>
                 </executions>
             </plugin>
+            -->
         </plugins>
     </build>
 

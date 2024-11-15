@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2024. MiguelProgrammer
+ */
+
 package br.com.techchallenge.fiap.neighborfood.core.domain.pedido;/*
  * Copyright (c) 2024. MiguelProgrammer
  */

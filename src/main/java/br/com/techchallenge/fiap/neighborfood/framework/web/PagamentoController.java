@@ -6,7 +6,7 @@ package br.com.techchallenge.fiap.neighborfood.framework.web;
 
 
 import _generated_sources_swagger_pagamento.NeighborfoodApi;
-import br.com.techchallenge.fiap.neighborfood.adapter.controllers.PagamentoControllerDomain;
+import br.com.techchallenge.fiap.neighborfood.adapter.controllers.Pagamento;
 import br.com.techchallenge.fiap.neighborfood.core.domain.dto.AcompanhamentoResponseDTO;
 import br.com.techchallenge.fiap.neighborfood.core.domain.dto.PagamentoDTO;
 import org.springframework.http.ResponseEntity;
@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class PagamentoController implements NeighborfoodApi {
 
-    private PagamentoControllerDomain pagamento;
+    private Pagamento pagamento;
 
-    public PagamentoController(PagamentoControllerDomain pagamento) {
+    public PagamentoController(Pagamento pagamento) {
         this.pagamento = pagamento;
     }
 

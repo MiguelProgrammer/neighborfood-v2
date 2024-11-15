@@ -4,8 +4,6 @@ package br.com.techchallenge.fiap.neighborfood.core.domain.pagamento;
  */
 
 
-import br.com.techchallenge.fiap.neighborfood.infrastructure.persistence.order.entities.PagamentoEntity;
-
 public class Pagamento {
 
     private Long id;

@@ -8,6 +8,6 @@ public class NeighborfoodApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(NeighborfoodApplication.class, args);
-        System.out.println("_______________ Lanchonete NeighborFood _______________");
+        System.out.println("_______________  - PAGAMENT0 - Lanchonete NeighborFood _______________");
     }
 }

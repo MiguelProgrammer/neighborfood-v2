@@ -16,10 +16,8 @@ spec:
         - name: neighborfood-app-container
           image: migprogrammer/neighborfood-v2:v4
           ports:
-            - containerPort: 80
+            - containerPort: 8080
+
           envFrom:
             - configMapRef:
                 name: app-neighborfood-configmap
-
-
-                #fim

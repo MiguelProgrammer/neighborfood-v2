@@ -4,10 +4,12 @@
 
 package br.com.techchallenge.fiap.neighborfood.core.usecase.pedido;
 
-import br.com.techchallenge.fiap.neighborfood.adapter.gateways.*;
+import br.com.techchallenge.fiap.neighborfood.adapter.gateways.AcompanhamentoGateway;
+import br.com.techchallenge.fiap.neighborfood.adapter.gateways.EstoqueGateway;
+import br.com.techchallenge.fiap.neighborfood.adapter.gateways.PedidoGateway;
+import br.com.techchallenge.fiap.neighborfood.adapter.gateways.UserGateway;
 import br.com.techchallenge.fiap.neighborfood.adapter.inbound.PedidoRequest;
 import br.com.techchallenge.fiap.neighborfood.config.exceptions.PedidoException;
-import br.com.techchallenge.fiap.neighborfood.core.domain.acompanhamento.Notificacao;
 import br.com.techchallenge.fiap.neighborfood.core.domain.dto.AcompanhamentoResponseDTO;
 import br.com.techchallenge.fiap.neighborfood.core.domain.enums.Categoria;
 import br.com.techchallenge.fiap.neighborfood.core.domain.enums.Status;
@@ -31,16 +33,14 @@ public class PedidoUseCase {
 
     private final PedidoGateway pedidoGateway;
     private final EstoqueGateway estoqueGateway;
-    private final NotificacaoGateway notificacaoGateway;
     private final AcompanhamentoGateway acompanhamentoGateway;
     private final UserGateway userGateway;
 
     public PedidoUseCase(PedidoGateway pedidoGateway, EstoqueGateway estoqueGateway,
-                         NotificacaoGateway notificacaoGateway, AcompanhamentoGateway acompanhamentoGateway,
+                         AcompanhamentoGateway acompanhamentoGateway,
                          UserGateway userGateway) {
         this.pedidoGateway = pedidoGateway;
         this.estoqueGateway = estoqueGateway;
-        this.notificacaoGateway = notificacaoGateway;
         this.acompanhamentoGateway = acompanhamentoGateway;
         this.userGateway = userGateway;
     }
@@ -109,7 +109,6 @@ public class PedidoUseCase {
         } else {
             NotificacaoEntity notificacao = new NotificacaoEntity();
             notificacao.setDescricao(MESSAGE_ADM_ESTOQUE);
-            notificacaoGateway.notifica(new Notificacao().entityfromDomain(notificacao));
             log.info(ITENS_EM_FALLTA);
         }
 
